@@ -7,8 +7,8 @@
 body{
     display: grid;
     
-    grid-template-columns: 200px 6fr;
-    grid-template-rows: 80px 6fr;
+    grid-template-columns: 170px 6fr;
+    grid-template-rows: 80px 655px;
     grid-template-areas: 
         "aa  cc "
         "aa  bb ";
@@ -31,7 +31,7 @@ body{
 .IconMenu{
     padding-top: 30px;
     padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 70px;
     text-align: right;
 }
 .menuicon {
@@ -46,16 +46,17 @@ body{
     text-align: center;
 }
 .Btn {
-    background-color: #4CAF50; 
-    padding-left: 20px;
-    width: 190px;
+    background-color: rgba(217, 217, 217, 1);
+    padding-left: 10px;
+    width: 160px;
     height: 40px;
     text-align: left;
     border-radius: 6px;
-    color: rgba(0, 122, 255, 1);
+    color: rgb(0, 0, 0);
     font-size: 17px;
     font-family: "Inter";
     font-weight: 500;
+    border: none;
 }
                                             /* Icon Option Menu */
 .Btn::before {
@@ -183,5 +184,124 @@ body{
 }
                                        /* Content */
 .Content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr 1fr 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas: 
+        "zz zzz zzz zzxx xxx xxx xx"
+        "kk kk kk kk kk kk kk";
+}
+                                       /* Group Title */
+.GroupTitle {
+    grid-area: zz;
+    padding: 5px;
+    text-align: left;
+    font-size: 25px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                       /* Add Group */
+.AddGroup {
+    grid-area: xx;
+    padding: 15px;
+    text-align: right;
+}
+.AddGroupBtn {
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 650;
+    text-align: center;
+    height: 37px;
+    width: 100px;
+    border: none;
+}
+                                       /* Note for group */
+.Note1 {
+    padding-top: 60px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-family: "Inter";
+    font-weight: 700;
+}
+.Name1{
+    text-align: left;
+    padding-left: 25px;
+}
+.Location {
+    text-align: center;
+    padding-left: 40px;
+}
+.DueTime {
+    text-align: right;
+    position: relative;
+    left: 40px;
+}
+.TimeDelayed {
+    text-align: center;
+    padding-left: 130px;
+}
+                                       /* Content about Group */
+.GroupContent{
+    grid-area: kk ;
+    padding-left: 100px;
+    padding-right: 120px;
+    text-align: center;
+    border-radius: 6px;
+    display: grid;
+    grid-template-rows: repeat(2, 30px);
+    grid-template-areas: 
+        "Group1 "
+        "Group2 ";
+}
+                                       /* One one Group on Page */                                  
+.Group1{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr ;
+    grid-template-areas: 
+        "LogoGroup1 Name1 Group11 Due1 Delay1 Start1 LogoMoreGroup1";
+}
+.Group2{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr ;
+    grid-template-areas: 
+        "LogoGroup2 Name2 Group12 Due2 Delay2 Start2 LogoMoreGroup2";
     
+}  
+.Off{
+    border-bottom: 2px solid black;
+    padding-top: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+.LogoGroup {
+    height: 20px;
+    width: auto;
+}
+.LogoStart {
+    height: 20px;
+    width: auto;
+}
+.LogoMoreGroup {
+    height: 20px;
+    width: auto;
+}
+.Name2 {
+    text-align: left;
+}
+.GroupName {
+    text-align: left;
+}
+.GroupDueTime {
+    text-align: left;
+}
+.GroupTimeDelayed {
+    text-align: left;
 }
