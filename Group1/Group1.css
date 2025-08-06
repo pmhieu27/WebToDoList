@@ -71,29 +71,30 @@ body{
     vertical-align: middle; /* Can giữa theo dòng chữ */
 }
 .Btn.Home::before {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png');
+    background-image: url('https://i.postimg.cc/Fzs66Bq8/image-removebg-preview-4.png');
+    background-size: 50px 50px;
 }
 .Btn.Group::before {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png');
+    background-image: url('https://i.postimg.cc/Wbmqt51F/image-removebg-preview-6.png');
 }
 .Btn.Mywork::before {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png');
+    background-image: url('https://i.postimg.cc/hGnBv0hj/image-removebg-preview-11.png');
+    background-size: 50px 50px;
 }
 .Btn.Incomplete::before {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png');
+    background-image: url('https://i.postimg.cc/h46Nh05B/image-removebg-preview-8.png');
 }
 .Btn.Important:before {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png');
+    background-image: url('https://i.postimg.cc/KYbC5vPv/image-removebg-preview-14.png');
+    background-size: 30px 25px;
 }
 .Btn.Calendar:before {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png');
+    background-image: url('https://i.postimg.cc/GhM8kHvd/image-removebg-preview-10.png');
 }
-                                            /* Bar */
+                                             /* Bar */
 .Bar {
     display: grid;
-    grid-template-columns: 150px  120px  15fr  1fr  1fr  2fr  1fr;
-    grid-template-areas: 
-        "qq ee rr tt uu vv ww";
+    grid-template-columns: 150px  120px  15fr 5px  1fr  1fr  2fr  1fr;
 }
                                             /* Date Time */
 .Block{
@@ -111,7 +112,7 @@ body{
     color: rgba(0, 122, 255, 1);
     font-size: 17px;
     font-family: "Inter";
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
 }
 .Date{
@@ -139,28 +140,30 @@ body{
     padding-left: 15px;
 }  
 .searchicon {
+    padding-top: 25px;
     height: 20px;
     width: auto;
     position: relative;
-    right: 40px;
-    top: 6px
-}  
+    right: 60px;
+    top: 6px;
+}
+
                                             /* Setting */
 .NoteSetting {
-    padding-top: 23px;
+    padding-top: 17px;
     text-align: left;
 }
 .settingicon{
-    height: 30px;
+    height: 50px;
     width: auto;
 }
                                             /* Notification */
 .NoteNotification{
-    padding-top: 23px;
+    padding-top: 10px;
     text-align: left;
 }
 .notificationicon{
-    height: 30px;
+    height: 60px;
     width: auto;
 }
                                             /* Username */
@@ -175,11 +178,12 @@ body{
 }
                                             /* Avatar */
 .NoteAvatar{
-    padding-top: 23px;
-    text-align: center;
+    position: relative;
+    top: -20px;
+    text-align: left;
 }
 .avataricon{
-    height: 30px;
+    height: 120px;
     width: auto;
 }
                                        /* Content */
@@ -218,31 +222,7 @@ body{
     width: 100px;
     border: none;
 }
-                                       /* Note for group */
-.Note1 {
-    padding-top: 60px;
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    font-family: "Inter";
-    font-weight: 700;
-}
-.Name1{
-    text-align: left;
-    padding-left: 25px;
-}
-.Location {
-    text-align: center;
-    padding-left: 40px;
-}
-.DueTime {
-    text-align: right;
-    position: relative;
-    left: 40px;
-}
-.TimeDelayed {
-    text-align: center;
-    padding-left: 130px;
-}
+
                                        /* Content about Group */
 .GroupContent{
     grid-area: kk ;
@@ -251,12 +231,43 @@ body{
     text-align: center;
     border-radius: 6px;
     display: grid;
-    grid-template-rows: repeat(2, 30px);
-    grid-template-areas: 
-        "Group1 "
-        "Group2 ";
+    grid-template-rows: repeat(3, 30px);
 }
-                                       /* One one Group on Page */                                  
+                                       /* Title for group */
+.TitleGroup1{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr ;
+    grid-template-areas: 
+        "LogoGroup1 Name1 Group11 Due1 Delay1 Start1 LogoMoreGroup1";
+}                                   
+.Note1 {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-family: "Inter";
+    font-weight: 700;
+}
+.Name1{
+    text-align: left;
+    position: relative;
+    left: -1px;
+}
+.Location {
+    text-align: left;
+    position: relative;
+    left: -5px;
+}
+.DueTime {
+    text-align: left;
+    position: relative;
+    left: -10px;
+}
+.TimeDelayed {
+    text-align: left;
+    position: relative;
+    left: -15px;
+
+}    
+                                       /* One one Group on Page */                         
 .Group1{
     display: grid;
     grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr ;
@@ -284,14 +295,20 @@ body{
 .LogoGroup {
     height: 20px;
     width: auto;
+    position: relative;
+    top: -2px ; 
 }
 .LogoStart {
     height: 20px;
     width: auto;
+    position: relative;
+    top: -3px ; 
 }
 .LogoMoreGroup {
     height: 20px;
     width: auto;
+    position: relative;
+    top: -2px ; 
 }
 .Name2 {
     text-align: left;
@@ -305,3 +322,4 @@ body{
 .GroupTimeDelayed {
     text-align: left;
 }
+                                       /* Animation */                                       

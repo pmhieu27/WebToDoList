@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+                                            /* Ke bang */            
+body{
+    display: grid;
+    
+    grid-template-columns: 170px 6fr;
+    grid-template-rows: 80px 655px;
+    grid-template-areas: 
+        "aa  cc "
+        "bb  dd ";
+    row-gap: 20px black;
+}
+.Menu {
+    grid-area: aa;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.Bar {
+    grid-area: cc;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+.GroupList {
+    grid-area: bb;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+.Main{
+    grid-area: dd;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+                                            /* Menu */
+.IconMenu{
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 70px;
+    text-align: right;
+}
+.menuicon {
+    height: 40px;
+    width: auto;
+}
+                                            /* Bar */
+.Bar {
+    display: grid;
+    grid-template-columns: 150px  120px  15fr 5px  1fr  1fr  2fr  1fr;
+}
+                                            /* Date Time */
+.Block{
+    padding: 20px;
+    text-align: left;
+}
+.NoteDate{
+    padding-left: 25px;
+}
+.NoteTime{
+}
+.Note{
+    background-color:rgba(13, 13, 228, 0.12);
+    border-radius: 6px;
+    color: rgba(0, 122, 255, 1);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 600;
+    text-align: center;
+}
+.Date{
+    height: 37px;
+    width: 130px;
+    border: none;
+}
+.Time{
+    height: 37px;
+    width: 90px;
+    border: none;
+}
+                                            /* Search */
+.NoteSearch{
+    text-align:end;
+    padding: 20px;
+}
+.Search{
+    height: 40px;
+    width: 40vw;                     
+    max-width: 700px;  
+    border-radius: 9px;
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+    padding-left: 15px;
+}  
+.searchicon {
+    padding-top: 25px;
+    height: 20px;
+    width: auto;
+    position: relative;
+    right: 60px;
+    top: 6px;
+}
+
+                                            /* Setting */
+.NoteSetting {
+    padding-top: 17px;
+    text-align: left;
+}
+.settingicon{
+    height: 50px;
+    width: auto;
+}
+                                            /* Notification */
+.NoteNotification{
+    padding-top: 10px;
+    text-align: left;
+}
+.notificationicon{
+    height: 60px;
+    width: auto;
+}
+                                            /* Username */
+.Username{
+    padding-top: 30px;
+    padding-right: 5px;
+    text-align: right;
+    color: rgba(0, 122, 255, 1);
+    font-size: 20px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Avatar */
+.NoteAvatar{
+    position: relative;
+    top: -20px;
+    text-align: left;
+}
+.avataricon{
+    height: 120px;
+    width: auto;
+}
+                                           /* GroupList */  
+.GroupTitle{
+    padding-bottom: 15px;
+    text-align: center;
+}
+.ButtonGL1 {
+    text-align: center;
+    padding-bottom: 5px;
+}
+.ButtonGL{
+    width: 95%;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(217, 217, 217, 1);
+    height: 25px;
+}
+                                             /* Main */    
+.Main{
+    display: grid;
+    grid-template-columns: 140px  1fr;
+}
+                                             /* TaskGList */   
+.TaskGList{
+     border-right: 1px solid black;
+     padding-top: 10px;
+}
+.ButtonGTL1 {
+    text-align: center;
+    padding-bottom: 5px;
+}
+.ButtonGT{
+    width: 95%;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(217, 217, 217, 1);
+    height: 20px;
+}
+  
+                                             /* Content */   
+.Content{
+    border-left: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr  200px;
+    grid-template-rows: 300px 1fr;
+    grid-template-areas: 
+        "xx  xxx "
+        "xxxx  xxxx ";
+}
+.GroupContent{
+    grid-area: xx;
+    padding-left: 50px;
+    padding-top: 5px;
+}
+.AddGroup{
+    grid-area: xxx;
+}
+                                       /* Title for group */
+.TitleGroup1{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr ;
+    grid-template-areas: 
+        "LogoGroup1 Name1 Group11 Due1 Delay1 Start1 LogoMoreGroup1";
+}                                   
+.Note1 {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-family: "Inter";
+    font-weight: 700;
+}
+.Name1{
+    text-align: left;
+    position: relative;
+    left: -1px;
+}
+.Location {
+    text-align: left;
+    position: relative;
+    left: -5px;
+}
+.DueTime {
+    text-align: left;
+    position: relative;
+    left: -10px;
+}
+.TimeDelayed {
+    text-align: left;
+    position: relative;
+    left: -15px;
+
+}  
+                                       /* One one Group on Page */                         
+.Group1{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr ;
+    grid-template-areas: 
+        "LogoGroup1 Name1 Group11 Due1 Delay1 Start1 LogoMoreGroup1";
+}
+.Task1{
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr 1fr ;
+    grid-template-areas: 
+        "LogoGroup2 Name2 Group12 Due2 Delay2 Start2 LogoMoreGroup2";
+    
+}  
+.Off{
+    border-bottom: 2px solid black;
+    padding-top: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+.LogoGroup {
+    height: 20px;
+    width: auto;
+    position: relative;
+    top: -2px ; 
+}
+.LogoTask{
+    height: 15px;
+    width: auto;
+    position: relative;
+    top: -2px ; 
+}
+.LogoStart {
+    height: 20px;
+    width: auto;
+    position: relative;
+    top: -3px ; 
+}
+.LogoMoreGroup {
+    height: 20px;
+    width: auto;
+    position: relative;
+    top: -2px ; 
+}
+.Name2 {
+    text-align: left;
+}
+.GroupName {
+    text-align: left;
+}
+.GroupDueTime {
+    text-align: left;
+}
+.GroupTimeDelayed {
+    text-align: left;
+}                               
+                                       /* Add Group */
+.AddGroup {
+    grid-area: xxx;
+    padding: 15px;
+    text-align: right;
+}
+.AddGroupBtn {
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 650;
+    text-align: center;
+    height: 37px;
+    width: 100px;
+    border: none;
+}
