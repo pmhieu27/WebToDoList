@@ -14,36 +14,24 @@
             <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
         </div>
         <div class = "Option">
-            <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
                 <div class="MenuItem Home">
                     <button class="Btn Home">Home</button> 
                 </div>
-            </form>
-            <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
                 <div class="MenuItem Group">
                     <button class="Btn Group">Group</button> 
                 </div>
-            </form>
-            <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
                 <div class="MenuItem Mywork">
                     <button class="Btn Mywork">My Work</button> 
                 </div>
-            </form>
-            <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
                 <div class="MenuItem Incomplete">
                     <button class="Btn Incomplete">Incomplete</button> 
                 </div>
-            </form>
-            <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post"></form>
                 <div class="MenuItem Important">
                     <button class="Btn Important">Important</button> 
                 </div>
-            </form>
-            <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
                 <div class="MenuItem Calendar">
                     <button class="Btn Calendar">Calendar</button> 
                 </div>
-            </form>
         </div>
     </div>
     <!-- Main content -->
@@ -142,7 +130,6 @@
               <div class="hour-slot"></div>
              </div>
          </div>
-      
           <div class="day-column">
             <div class="day-label">
               <span class="weekday">Mon</span>
@@ -359,12 +346,10 @@
 <script>
 const weekdays = document.querySelectorAll('.weekday');
 const daynums = document.querySelectorAll('.daynum');
-
 // Lấy ngày hôm nay
 const today = new Date();
 const startOfWeek = new Date(today);
 startOfWeek.setDate(today.getDate() - today.getDay()); // Bắt đầu từ Chủ nhật
-
 for (let i = 0; i < 7; i++) {
   const currentDay = new Date(startOfWeek);
   currentDay.setDate(startOfWeek.getDate() + i);
@@ -375,6 +360,6 @@ for (let i = 0; i < 7; i++) {
   daynums[i].textContent = currentDay.getDate();
 }
 </script>
-
 </body>
 </html>
+
