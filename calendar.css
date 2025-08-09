@@ -1,0 +1,409 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grid layout chính */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: 
+        "aa  cc"
+        "aa  bb";
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+/* Sidebar */
+.Menu {
+  grid-area: aa;
+  border-right: 2px solid black; /* Một đường thẳng chạy suốt */
+  background-color: white;
+  height: 100vh;
+  text-align: center;
+}
+/* Item con */
+.MenuItem {
+    margin-bottom: 15px;
+}
+/* Header */
+.Bar {
+  grid-area: cc;
+  border-bottom: 2px solid black;  
+}
+/* Main Content */
+.Content {
+  grid-area: bb;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px; 
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 50px;
+}
+                                           /* Menu */
+.IconMenu{
+  padding-top: 30px;
+  padding-right: 10px;
+  padding-bottom: 70px;
+  text-align: right;
+}
+.menuicon {
+  height: 25px;
+  width: auto;
+}
+                                            /* Option Menu */
+/* Sidebar */
+.Btn {
+  background-color: rgba(217, 217, 217, 1);
+  padding-left: 10px;
+  width: 150px;
+  height: 40px;
+  text-align: left;
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  font-family: "Inter";
+  font-weight: 500;
+}
+                                            /* Icon Option Menu */
+.Btn::before {
+  content: ""; /* BẮT BUỘC để ::before hiện ra */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  margin-right: 8px; /* Tuỳ chỉnh nếu cần khoảng cách với chữ */
+  vertical-align: middle; /* Can giữa theo dòng chữ */
+}
+.Btn.Home::before {
+    background-image: url('https://i.postimg.cc/Fzs66Bq8/image-removebg-preview-4.png');
+    background-size: 50px 50px;
+}
+.Btn.Group::before {
+    background-image: url('https://i.postimg.cc/Wbmqt51F/image-removebg-preview-6.png');
+}
+.Btn.Mywork::before {
+    background-image: url('https://i.postimg.cc/hGnBv0hj/image-removebg-preview-11.png');
+    background-size: 50px 50px;
+}
+.Btn.Incomplete::before {
+    background-image: url('https://i.postimg.cc/h46Nh05B/image-removebg-preview-8.png');
+}
+.Btn.Important:before {
+    background-image: url('https://i.postimg.cc/KYbC5vPv/image-removebg-preview-14.png');
+    background-size: 30px 25px;
+}
+.Btn.Calendar:before {
+    background-image: url('https://i.postimg.cc/GhM8kHvd/image-removebg-preview-10.png');
+}
+                                             /* Bar */
+.Bar {
+    display: grid;
+    grid-template-columns: 150px  120px  15fr 5px  1fr  1fr  2fr  1fr;
+}
+                                            /* Date Time */
+.Block{
+    padding: 15px;
+    text-align: left;
+}
+.NoteDate{
+    padding-left: 40px;
+}
+
+.Note{
+  background-color:rgba(13, 13, 228, 0.12);
+  border-radius: 6px;
+  color: rgba(0, 122, 255, 1);
+  font-size: 17px;
+  font-family: "Inter";
+  font-weight: 600;
+  text-align: center;
+}
+.Date{
+  height: 30px;
+  width: 110px;
+  border: none;
+}
+.Time{
+  height: 30px;
+  width: 85px;
+  border: none;
+}
+                                            /* Search */
+.NoteSearch{
+    text-align:end;
+    padding: 10px;
+}
+.Search{
+    height: 35px;
+    width: 35vw;                     
+    max-width: 700px;  
+    border-radius: 9px;
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+    padding-left: 15px;
+}  
+.searchicon {
+    padding-top: 8px;
+    height: 35px;
+    width: auto;
+    position: relative;
+    right: 45px;
+    top: 6px;
+}
+                                            /* Setting */
+.NoteSetting {
+    padding-top: 12.5px;
+    text-align: left;
+}
+.settingicon{
+    height: 35px;
+    width: auto;
+}
+                                            /* Notification */
+.NoteNotification{
+    padding-top: 9px;
+    text-align: left;
+}
+.notificationicon{
+    height: 40px;
+    width: auto;
+}
+                                            /* Username */
+.Username{
+    padding-top: 19px;
+    padding-right: 0px;
+    text-align: right;
+    color: rgba(0, 122, 255, 1);
+    font-size: 20px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Avatar */
+.NoteAvatar{
+    position: relative;
+    top: -16px;
+    text-align: left;
+}
+.avataricon{
+    height: 90px;
+    width: auto;
+}
+/*calendar*/
+.calendar {
+  display: flex;
+  overflow-y: auto;   
+  overflow-x: hidden; 
+  width: 100%;
+  height: calc(100vh - 60px);
+  flex:1;
+  position: relative;
+   margin-top: 2px; 
+}
+.calendar-header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: white;
+}
+.calendar-container {
+  height: 100vh;
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+}
+.calendar-grid {
+  display: flex;
+  flex-grow: 1;
+  border-left: 1px solid #ccc;
+  position: relative;
+  width: 100%;
+  height: calc(60px * 24); 
+  flex-shrink: 0; 
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+.calendar-content {
+  height: calc(24 * 60px);
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+}
+.calendar-columns {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+}
+.days-header {
+    display: flex;
+    border-top: 1px solid #ccc; 
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  border-bottom: 1px solid #000;
+}
+.day-label .weekday {
+  font-size: 14px;
+  color: #777;
+  text-transform: uppercase;
+  padding-top: 8px;
+}
+.day-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  flex: 1;
+  border-right: 1px solid #ccc;
+  position: relative;
+  background-color: #fff;
+  height: 100%; 
+}
+.day-label .daynum {
+  font-size: 30px;
+  font-weight: 500;
+  color: #333;
+}
+.day-label {
+  height: 50px;
+  background: #f0f0f0;
+  display: flex;
+  flex: 1;
+  font-weight: bold;
+  flex-direction: column;   
+  align-items: center;       
+  justify-content: center; 
+  text-align: center;
+  font-weight: 500;
+  padding: 5px 5px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 2px solid #ccc;
+}
+.day-body {
+  height: calc(60px * 24); /* 24 giờ */
+  flex-grow: 1;
+}
+.days-header {
+    display: flex;
+    border-top: 1px solid #ccc; /* Thêm đường kẻ này */
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+.time {
+  height: 60px;
+  font-size: 12px;
+  color: #666;
+  padding-left: 5px;
+}
+.time-column {
+  width: 60px;
+  background: #fafafa;
+  border-right: 1px solid #ccc;
+  position: sticky;
+  left: 0;
+  padding: 0px;
+  margin: 0px;
+  flex: 0 0 60px;
+  z-index: 5;
+}
+.time-row {
+  height: 60px;
+  padding-left: 5px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.time-slot {
+  height: 60px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+
+}
+.hour-slot {
+  height: 60px;
+  border-bottom: 1px solid #eee;
+}
+.hour-row {
+  height: 60px; 
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  font-size: 12px;
+  text-align: right;
+  padding-right: 5px;
+  line-height: 60px;
+}
+.event {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  padding: 4px;
+  font-size: 11px;
+  color: white;
+  border-radius: 5px;
+  line-height: 1.2;
+  font-size: 12px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.event {
+  color: white;            
+  font-size: 14px;          
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;              
+  box-sizing: border-box;
+}
+.event.red {
+  background-color: #eb978d; 
+}
+.event.blue {
+  background-color: rgb(79, 151, 252)
+}
+.event.green {
+  background-color: #32dc79;  
+}
+.event.orange {
+  background-color: #f6b958;  
+}
+.event.purple {
+  background-color: #9b59b6;  
+}
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(7, minmax(90px, 1fr));
+  }
+}
