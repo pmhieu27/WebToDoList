@@ -84,6 +84,28 @@ body {
     font-family: "Inter";
     font-weight: 500;
 }
+.Btn:hover {
+    background-color: #b0b0b0; 
+    transform: translateY(-2px); 
+    transition: all 0.2s ease;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+
+.Btn.Home.active {
+    background-color: #a6a6a6; 
+   border: 2px solid black; 
+    transform: translateY(2px);
+    pointer-events: none; 
+}
                                             /* Icon Option Menu */
 .Btn::before {
     content: ""; /* BẮT BUỘC để ::before hiện ra */
@@ -502,4 +524,5 @@ div {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+
 }
