@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="Incomplete.css" />
+    <title>Incomplete</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+
+<body> 
+    <div class="Menu">
+    <div class="IconMenu">
+      <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
+    </div>
+    <div class="Option">
+      <div class="MenuItem Home">
+        <button class="Btn Home" id="btnHome">Home</button>
+      </div>
+      <div class="MenuItem Group">
+        <button class="Btn Group">Group</button>
+      </div>
+      <div class="MenuItem Mywork">
+        <button class="Btn Mywork">My Work</button>
+      </div>
+      <div class="MenuItem Incomplete">
+        <button class="Btn Incomplete active" id="btnIncomplete">Incomplete</button>
+      </div>
+      <div class="MenuItem Important">
+        <button class="Btn Important">Important</button>
+      </div>
+      <div class="MenuItem Calendar">
+        <button class="Btn Calendar">Calendar</button>
+      </div>
+    </div>
+  </div>
+    <div class="Bar">
+        <div class="Block NoteDate">
+            <button class="Note Date"> Jun 10, 2025</button>
+        </div>
+        <div class="Block NoteTime">
+            <button class="Note Time"> 9:41 AM</button>
+        </div>
+        <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
+            <div class="NoteSearch">
+                <input class="Search" type="text" placeholder="Search..." />
+            </div>
+        </form>
+        <img class="searchicon" src="https://i.postimg.cc/1XhxYBPZ/image-removebg-preview.png" alt="Search" />
+        <div class="NoteSetting" id="noteSetting">
+            <img class="settingicon" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+            <div id="settingPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                <div class="container">
+                  <div class="white-box"></div>
+                  <div class="line"></div>
+                  <div class="text">Setting</div>
+                  <div class="icon">
+                    <img class="settingicon-inner" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="NoteNotification" id="noteNotification">
+            <img class="notificationicon" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+            <div id="notificationPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                  <div class="container">
+                      <div class="label-important">Quan trọng</div>
+                          <div class="important-box"></div>
+                          <div class="important-text">Bạn có nhiệm vụ mới trong nhóm CSLT</div>
+                          <div class="important-time">1 phút trước</div>
+
+                          <div class="divider"></div>
+
+                          <div class="label-other">Các thông báo khác</div>
+                          <div class="other-box"></div>
+                          <div class="other-text">Bài tập về nhà CNXHKH sẽ hết hạn trong 15p tới</div>
+                          <div class="other-time">2 phút trước</div>
+                    <div class="white-box"></div>
+                    <div class="line"></div>
+                    <div class="text">Notification</div>
+                    <div class="icon">
+                      <img class="notificationicon-inner" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="Username">
+            <p> Username</p>
+        </div>
+        <div class="NoteAvatar">
+            <img class="avataricon" src="https://i.postimg.cc/0ybsjbVF/image-removebg-preview-3.png" alt="Avatar" />
+        </div>
+    </div>
+
+   <div class="Content">
+      <div class="title">
+    <span class="material-icons" id="toggleTasks" style="cursor:pointer;">expand_more</span>
+    Past due task
+</div>
+   <div class="Section" id="taskSection">
+<div class="table-header">
+    <div></div>
+    <div>Group</div>
+    <div>Due time</div>
+    <div>Time delayed</div>
+    <div></div>
+</div>
+
+<div class="table-row">
+    <div class="task-name"><span class="material-icons">groups</span> Bài tập về nhà CNXH</div>
+    <div class="due-grp">Nhóm CNXHKH</div>
+    <div class="due-time">March 16th, 2025</div>
+    <div class="time-delayed">00:12:39</div>
+    <div><span class="material-icons">more_vert</span></div>
+</div>
+
+<div class="table-row">
+    <div class="task-name"><span class="material-icons">list</span> Ôn tập kiểu dữ liệu</div>
+    <div class="due-grp">Personal</div>
+    <div class="due-time">March 16th, 2025</div>
+    <div class="time-delayed">00:12:39</div>
+    <div><span class="material-icons">more_vert</span></div>
+</div>
+
+<div class="table-row">
+    <div class="task-name"><span class="material-icons">list</span> Bài tập về nhà Tiết 10</div>
+    <div class="due-grp">Personal</div>
+    <div class="due-time">March 16th, 2025</div>
+    <div class="time-delayed">00:12:39</div>
+    <div><span class="material-icons">more_vert</span></div>
+</div>
+
+<div class="table-row">
+    <div class="task-name"><span class="material-icons">groups</span> Bài tập TA 1</div>
+    <div  class="due-grp">Nhóm TA 1</div>
+    <div class="due-time">March 16th, 2025</div>
+    <div class="time-delayed">00:12:39</div>
+    <div><span class="material-icons">more_vert</span></div>
+</div>
+
+<div class="table-row">
+    <div class="task-name"><span class="material-icons">groups</span> Đi du lịch</div>
+    <div class="due-grp">Gia đình</div>
+    <div class="due-time">March 16th, 2025</div>
+    <div class="time-delayed">00:12:39</div>
+    <div><span class="material-icons">more_vert</span></div>
+</div>
+   </div>
+   </div>
+</body>
+<script>
+  document.getElementById('btnHome').onclick = function() {
+    window.location.href = 'home.html';
+  };
+  document.getElementById('btnIncomplete').onclick = function() {
+    window.location.href = 'incomplete.html';
+  };
+
+  const toggleBtn = document.getElementById('toggleTasks');
+  const taskSection = document.getElementById('taskSection');
+
+  toggleBtn.addEventListener('click', () => {
+    taskSection.classList.toggle('collapsed');
+    if (taskSection.classList.contains('collapsed')) {
+      toggleBtn.textContent = 'expand_less'; // thu gọn
+    } else {
+      toggleBtn.textContent = 'expand_more'; // mở rộng
+    }
+  });
+
+          const noteSetting = document.getElementById('noteSetting'); // dùng chữ thường noteSetting cho biến
+      const settingPanel = document.getElementById('settingPanel');
+
+      noteSetting.addEventListener('mouseenter', () => {
+        settingPanel.style.display = 'block';
+      });
+
+      noteSetting.addEventListener('mouseleave', () => {
+        settingPanel.style.display = 'none';
+      });
+
+      const noteNotification = document.getElementById('noteNotification'); // tương tự
+      const notificationPanel = document.getElementById('notificationPanel');
+
+      noteNotification.addEventListener('mouseenter', () => {
+        notificationPanel.style.display = 'block';
+      });
+
+      noteNotification.addEventListener('mouseleave', () => {
+        notificationPanel.style.display = 'none';
+      });
+
+
+</script>
+
+</html>
