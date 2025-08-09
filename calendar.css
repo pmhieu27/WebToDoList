@@ -28,7 +28,7 @@ body {
 /* Sidebar */
 .Menu {
   grid-area: aa;
-  border-right: 2px solid black; /* Một đường thẳng chạy suốt */
+  border-right: 2px solid black; 
   background-color: white;
   height: 100vh;
   text-align: center;
@@ -80,17 +80,38 @@ body {
   font-family: "Inter";
   font-weight: 500;
 }
+.Btn:hover {
+    background-color: #b0b0b0; 
+    transform: translateY(-2px); 
+    transition: all 0.2s ease;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+.Btn.Home.active {
+    background-color: #a6a6a6;
+   border: 2px solid black; 
+    transform: translateY(2px);
+    pointer-events: none; 
+}
                                             /* Icon Option Menu */
 .Btn::before {
-  content: ""; /* BẮT BUỘC để ::before hiện ra */
+  content: ""; 
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   height: 30px;
   width: 30px;
   display: inline-block;
-  margin-right: 8px; /* Tuỳ chỉnh nếu cần khoảng cách với chữ */
-  vertical-align: middle; /* Can giữa theo dòng chữ */
+  margin-right: 8px; 
+  vertical-align: middle;
 }
 .Btn.Home::before {
     background-image: url('https://i.postimg.cc/Fzs66Bq8/image-removebg-preview-4.png');
@@ -406,4 +427,5 @@ body {
   .calendar-grid {
     grid-template-columns: repeat(7, minmax(90px, 1fr));
   }
+
 }
