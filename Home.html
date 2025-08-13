@@ -10,8 +10,8 @@
   </head>
 
 <body> 
-   <div class="Menu">
-    <div class="IconMenu">
+   <div class="Menu" id="menuPanel">
+    <div class="IconMenu" id="menuToggle">
       <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
     </div>
     <div class="Option">
@@ -35,12 +35,16 @@
       </div>
     </div>
   </div>
+    
     <div class="Bar">
+      <div class="IconMenuBar hidden" id="menuToggleBar" style="cursor:pointer;">
+        <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
+      </div>
         <div class="Block NoteDate">
-            <button class="Note Date"> Jun 10, 2025</button>
+            <button class="Note Date" id="realDate"> Jun 10, 2025</button>
         </div>
         <div class="Block NoteTime">
-            <button class="Note Time"> 9:41 AM</button>
+            <button class="Note Time" id="realTimeClock"> 9:41 AM</button>
         </div>
         <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
             <div class="NoteSearch">
@@ -48,11 +52,42 @@
             </div>
         </form>
         <img class="searchicon" src="https://i.postimg.cc/1XhxYBPZ/image-removebg-preview.png" alt="Search" />
-        <div class="NoteSetting">
+        <div class="NoteSetting" id="noteSetting">
             <img class="settingicon" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+            <div id="settingPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                <div class="container">
+                  <div class="white-box"></div>
+                  <div class="line"></div>
+                  <div class="text">Setting</div>
+                  <div class="icon">
+                    <img class="settingicon-inner" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+                  </div>
+                </div>
+              </div>
         </div>
-        <div class="NoteNotification">
+        <div class="NoteNotification" id="noteNotification">
             <img class="notificationicon" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+            <div id="notificationPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                  <div class="container">
+                      <div class="label-important">Quan trọng</div>
+                          <div class="important-box"></div>
+                          <div class="important-text">Bạn có nhiệm vụ mới trong nhóm CSLT</div>
+                          <div class="important-time">1 phút trước</div>
+
+                          <div class="divider-header"></div>
+
+                          <div class="label-other">Các thông báo khác</div>
+                          <div class="other-box"></div>
+                          <div class="other-text">Bài tập về nhà CNXHKH sẽ hết hạn trong 15p tới</div>
+                          <div class="other-time">2 phút trước</div>
+                    <div class="white-box"></div>
+                    <div class="line"></div>
+                    <div class="text">Notification</div>
+                    <div class="icon">
+                      <img class="notificationicon-inner" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+                    </div>
+                  </div>
+            </div>
         </div>
         <div class="Username">
             <p> Username</p>
@@ -61,7 +96,6 @@
             <img class="avataricon" src="https://i.postimg.cc/0ybsjbVF/image-removebg-preview-3.png" alt="Avatar" />
         </div>
     </div>
-
       
    <div class="Content">
   <!-- Due Tasks -->
@@ -353,6 +387,76 @@
     document.getElementById('btnIncomplete').onclick = function() {
       window.location.href = 'incomplete.html';
     };
+
+    /* Phần setting */
+noteSetting.addEventListener('click', (e) => {
+  e.stopPropagation(); 
+  settingPanel.style.display = (settingPanel.style.display === 'block') ? 'none' : 'block';
+});
+
+document.addEventListener('click', (e) => {
+  if (!noteSetting.contains(e.target) && !settingPanel.contains(e.target)) {
+    settingPanel.style.display = 'none';
+  }
+});
+
+/* Phần notification */
+noteNotification.addEventListener('click', (e) => {
+  e.stopPropagation(); 
+  notificationPanel.style.display = (notificationPanel.style.display === 'block') ? 'none' : 'block';
+});
+
+document.addEventListener('click', (e) => {
+  if (!noteNotification.contains(e.target) && !notificationPanel.contains(e.target)) {
+    notificationPanel.style.display = 'none';
+  }
+});
+
+const iconMenu = document.getElementById('menuToggle');      // icon trong menu
+    const iconMenuBar = document.getElementById('menuToggleBar'); // icon trên thanh bar
+    const menu = document.querySelector('.Menu');
+    const body = document.body;
+
+    iconMenu.addEventListener('click', () => {
+      body.classList.add('menu-hidden');
+      iconMenuBar.classList.remove('hidden');
+    });
+
+    iconMenuBar.addEventListener('click', () => {
+      body.classList.remove('menu-hidden');
+      iconMenuBar.classList.add('hidden');
+    });
+
+
+    // Đồng hồ thời gian thực
+function updateClock() {
+  const now = new Date();
+
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+
+  // Định dạng 12h AM/PM
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 0 giờ -> 12 giờ
+
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+
+  const timeString = `${hours}:${minutes} ${ampm}`;
+
+  document.getElementById('realTimeClock').textContent = timeString;
+
+  // Hiển thị ngày tháng năm dạng 
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('realDate').textContent = now.toLocaleDateString(undefined, options);
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+  
+
   </script>
 
 </html>
