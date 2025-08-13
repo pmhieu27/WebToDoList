@@ -135,6 +135,8 @@ body {
     display: grid;
     grid-template-columns: 150px  120px  15fr 5px  1fr  1fr  2fr  1fr;
 }
+
+
                                             /* Date Time */
 .Block{
     padding: 15px ;
@@ -188,9 +190,10 @@ body {
 
                                             /* Setting */
 .NoteSetting {
+  position: relative;
     padding-top: 12.5px;
     text-align: left;
-    padding-left: 30px;
+    left: 30px;
 }
 .settingicon{
     height: 35px;
@@ -198,10 +201,9 @@ body {
 }
                                             /* Notification */
 .NoteNotification{
-  position: relative;
+    padding-left: 25px;
     padding-top: 9px;
     text-align: left;
-    left: 25px;
 }
 .notificationicon{
     height: 40px;
@@ -810,4 +812,338 @@ body {
   white-space: nowrap;
   width: 61px;
 }
+
+/* Phần ẩn */
+/* Phần Setting*/
+.NoteSetting {
+  position: relative;
+  display: inline-block;
+  padding-top: 12.5px;
+  text-align: left;
+  left: 30px;
+}
+
+#settingPanel {
+  display: none;
+  position: absolute;
+  top: 45px;  /* tăng khoảng cách hoặc điều chỉnh */
+  right: 0;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position:relative;
+  top: 8px;
+  right: 12px;
+  width: 32.5px;
+  height: 32.5px;
+}
+
+.settingicon-inner {
+color: black;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+/* Phần Thông báo*/
+
+#notificationPanel {
+  display: none;
+  position: fixed; /* hoặc absolute, chọn 1 */
+  top: 45px;
+  right: 10px;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  width: 35px;
+  height: 35px;
+}
+
+.notificationicon-inner {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+/* Label Quan trọng */
+/* Label Quan trọng */
+.label-important {
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo quan trọng */
+.important-box {
+  width: 220px;
+  height: 28px;
+  position: absolute;
+  left: 15px;
+  top: 60px;
+  background: #C8C1C1;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo quan trọng */
+.important-text {
+  position: absolute;
+  left: 20px;
+  top: 65px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo quan trọng */
+.important-time {
+  position: absolute;
+  left: 180px;
+  top: 77px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Đường kẻ phân cách */
+.divider-header {
+  width: 220px;
+  height: 0;
+  position: absolute;
+  left: 15px;
+  top: 95px;
+  outline: 1px solid black;
+  outline-offset: -0.5px;
+}
+
+/* Label Các thông báo khác */
+.label-other {
+  position: absolute;
+  left: 10px;
+  top: 105px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo khác */
+.other-box {
+  width: 220px;
+  height: 30px;
+  position: absolute;
+  left: 15px;
+  top: 125px;
+  background: #FFF4F4;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo khác */
+.other-text {
+  position: absolute;
+  left: 20px;
+  top: 130px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo khác */
+.other-time {
+  position: absolute;
+  left: 180px;
+  top: 145px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Icon góc trên trái */
+.icon-wrapper {
+  width: 9px;
+  height: 11px;
+  position: absolute;
+  left: 68px;
+  top: 6px;
+  overflow: hidden;
+}
+
+.icon-box {
+  width: 4px;
+  height: 6px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  outline: 2px solid black;
+  outline-offset: -1px;
+}
+
+.icon-line {
+  width: 2px;
+  height: 1px;
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  outline: 2px solid black;
+  outline-offset: -1px;
+}
+/* Ẩn menu */
+.menu-hidden .Menu {
+  display: none;
+}
+
+/* Khi menu ẩn, phần còn lại chiếm full width */
+.menu-hidden .Content,
+.menu-hidden .Bar {
+  grid-column: 1 / -1; /* chiếm hết các cột */
+}
+
+/* Ẩn icon menu trong menu */
+.menu-hidden #menuToggle {
+  display: none;
+}
+
+/* Hiện icon menu trên thanh bar */
+.menu-hidden #menuToggleBar {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 23px;
+  height: 23px;
+  z-index: 2000;
+}
+
+#menuToggleBar img.menuicon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Ẩn icon menu trên thanh bar khi menu hiện */
+#menuToggleBar.hidden {
+  display: none;
+}
+.Block.NoteDate,
+.Block.NoteTime {
+  margin-left: 20px;
+}
+#realTimeClock,
+#realDate {
+  font-size: 14px; /* bạn có thể chỉnh nhỏ hơn hoặc lớn hơn tùy ý */
+  font-weight: normal;
+  /* thêm nếu muốn kiểu chữ khác */
+  /* font-family: 'Arial', sans-serif; */
+}
+
 
