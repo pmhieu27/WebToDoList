@@ -381,16 +381,16 @@ body {
 
 /* ===== Đồng hồ cơ bản ===== */
 .clock-container {
-  position: fixed;    /* Giúp đồng hồ luôn cố định */
-  top: 120px;         /* Điều chỉnh khoảng cách từ trên xuống */
-  right: 30px;        /* Điều chỉnh khoảng cách từ phải sang */
-  z-index: 999;       /* Nổi lên trên */
+  position: fixed;
+  top: 120px;   /* vị trí cố định từ trên */
+  right: 30px;  /* vị trí cố định từ phải */
+  z-index: 999;
 }
+
 
 .group {
   background-color: #d9d9d9;
   height: 134px;
-  position: relative;
   width: 295px;
 }
 
@@ -466,7 +466,6 @@ body {
 
 .group .overlap-group {
   height: 5px;
-  position: relative;
 }
 
 .group .ellipse-3 {
@@ -518,15 +517,6 @@ body {
   width: 1px;
 }
 
-.group .rectangle-4 {
-  background-color: #ffffff4c;
-  border-radius: 2.58px;
-  height: 15px;
-  left: 5px;
-  position: absolute;
-  top: 5px;
-  width: 47px;
-}
 
 .group .mask-group {
   height: 15px;
