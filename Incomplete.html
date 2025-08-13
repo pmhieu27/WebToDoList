@@ -19,19 +19,19 @@
         <button class="Btn Home" id="btnHome">Home</button>
       </div>
       <div class="MenuItem Group">
-        <button class="Btn Group">Group</button>
+        <button class="Btn Group" id="btnGroup">Group</button>
       </div>
       <div class="MenuItem Mywork">
-        <button class="Btn Mywork">My Work</button>
+        <button class="Btn Mywork" id="btnMywork">My Work</button>
       </div>
       <div class="MenuItem Incomplete">
         <button class="Btn Incomplete active" id="btnIncomplete">Incomplete</button>
       </div>
       <div class="MenuItem Important">
-        <button class="Btn Important">Important</button>
+        <button class="Btn Important" id="btnImportant">Important</button>
       </div>
       <div class="MenuItem Calendar">
-        <button class="Btn Calendar">Calendar</button>
+        <button class="Btn Calendar" id="btnCalendar">Calendar</button>
       </div>
     </div>
   </div>
@@ -153,12 +153,24 @@
    </div>
 </body>
 <script>
-  document.getElementById('btnHome').onclick = function() {
-    window.location.href = 'home.html';
-  };
-  document.getElementById('btnIncomplete').onclick = function() {
-    window.location.href = 'incomplete.html';
-  };
+   document.getElementById('btnHome').onclick = function() {
+      window.location.href = 'Home.html';
+    };
+    document.getElementById('btnIncomplete').onclick = function() {
+      window.location.href = 'Incomplete.html';
+    };
+    document.getElementById('btnGroup').onclick = function() {
+      window.location.href = 'Group.html';
+    };
+    document.getElementById('btnCalendar').onclick = function() {
+      window.location.href = 'Calendar.html';
+    };
+    document.getElementById('btnMywork').onclick = function() {
+      window.location.href = 'Mywork.html';
+    };
+    document.getElementById('btnImportant').onclick = function() {
+      window.location.href = 'Important.html';
+    };
 
   const toggleBtn = document.getElementById('toggleTasks');
   const taskSection = document.getElementById('taskSection');
