@@ -188,10 +188,9 @@ body {
 
                                             /* Setting */
 .NoteSetting {
-  position: relative;
     padding-top: 12.5px;
     text-align: left;
-    left: 30px;
+    padding-left: 30px;
 }
 .settingicon{
     height: 35px;
@@ -811,3 +810,4 @@ body {
   white-space: nowrap;
   width: 61px;
 }
+
