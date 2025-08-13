@@ -19,19 +19,19 @@
         <button class="Btn Home active" id="btnHome">Home</button>
       </div>
       <div class="MenuItem Group">
-        <button class="Btn Group">Group</button>
+        <button class="Btn Group" id="btnGroup">Group</button>
       </div>
       <div class="MenuItem Mywork">
-        <button class="Btn Mywork">My Work</button>
+        <button class="Btn Mywork" id="btnMywork">My Work</button>
       </div>
       <div class="MenuItem Incomplete">
         <button class="Btn Incomplete " id="btnIncomplete">Incomplete</button>
       </div>
       <div class="MenuItem Important">
-        <button class="Btn Important">Important</button>
+        <button class="Btn Important" id="btnImportant">Important</button>
       </div>
       <div class="MenuItem Calendar">
-        <button class="Btn Calendar">Calendar</button>
+        <button class="Btn Calendar" id="btnCalendar">Calendar</button>
       </div>
     </div>
   </div>
@@ -271,9 +271,6 @@
       <div class="rectangle-3"></div>
       <div class="ellipse-5"></div>
       <div class="ellipse-5"></div>
-      <div class="rectangle-4"></div>
-
-      <img class="mask-group" alt="Mask group" src="./mask-group.png" />
 
       <div class="overlap-wrapper">
         <div class="overlap-group">
@@ -349,6 +346,7 @@
   </div>
 </div>
 
+
 </body>
 <script>
   document.querySelectorAll('.task-actions .material-icons:first-child')
@@ -382,15 +380,27 @@
   </script>
   <script>
     document.getElementById('btnHome').onclick = function() {
-      window.location.href = 'home.html';
+      window.location.href = 'Home.html';
     };
     document.getElementById('btnIncomplete').onclick = function() {
-      window.location.href = 'incomplete.html';
+      window.location.href = 'Incomplete.html';
+    };
+    document.getElementById('btnGroup').onclick = function() {
+      window.location.href = 'Group.html';
+    };
+    document.getElementById('btnCalendar').onclick = function() {
+      window.location.href = 'Calendar.html';
+    };
+    document.getElementById('btnMywork').onclick = function() {
+      window.location.href = 'Mywork.html';
+    };
+    document.getElementById('btnImportant').onclick = function() {
+      window.location.href = 'Important.html';
     };
 
     /* Phần setting */
 noteSetting.addEventListener('click', (e) => {
-  e.stopPropagation(); 
+  e.stopPropagation(); // Ngăn sự kiện lan ra ngoài
   settingPanel.style.display = (settingPanel.style.display === 'block') ? 'none' : 'block';
 });
 
@@ -402,7 +412,7 @@ document.addEventListener('click', (e) => {
 
 /* Phần notification */
 noteNotification.addEventListener('click', (e) => {
-  e.stopPropagation(); 
+  e.stopPropagation(); // Ngăn sự kiện lan ra ngoài
   notificationPanel.style.display = (notificationPanel.style.display === 'block') ? 'none' : 'block';
 });
 
@@ -428,7 +438,7 @@ const iconMenu = document.getElementById('menuToggle');      // icon trong menu
     });
 
 
-    // Đồng hồ thời gian thực
+    // Đồng hồ thời gian thực (12h, AM/PM)
 function updateClock() {
   const now = new Date();
 
@@ -448,7 +458,7 @@ function updateClock() {
 
   document.getElementById('realTimeClock').textContent = timeString;
 
-  // Hiển thị ngày tháng năm dạng 
+  // Hiển thị ngày tháng năm dạng ví dụ: "August 12, 2025"
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   document.getElementById('realDate').textContent = now.toLocaleDateString(undefined, options);
 }
@@ -456,6 +466,35 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
   
+// Thời gian mục tiêu (ví dụ: 1 ngày từ hiện tại)
+const targetDate = new Date();
+targetDate.setDate(targetDate.getDate() + 1); // đếm ngược 1 ngày
+
+function updateCountdown() {
+  const now = new Date();
+  let diff = targetDate - now;
+
+  if (diff < 0) {
+    diff = 0; // nếu quá hạn
+  }
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  // Update số trên giao diện
+  document.querySelector('.overlap-2 .text-wrapper-2').textContent = days;
+  document.querySelector('.overlap-4 .text-wrapper-3').textContent = hours;
+  document.querySelector('.overlap-3 .text-wrapper-3').textContent = minutes;
+  document.querySelector('.overlap .text-wrapper').textContent = seconds;
+}
+
+// Cập nhật mỗi giây
+setInterval(updateCountdown, 1000);
+
+// Khởi chạy ngay lập tức
+updateCountdown();
 
   </script>
 
