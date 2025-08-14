@@ -1,47 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Calendar UI</title>
-  <link rel="stylesheet" href="calendar.css" />
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" type="image/x-icon" />
-</head>
-<body>
-    <!-- Sidebar -->
-   <div class = "Menu">
-        <div class = "IconMenu">
-            <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
-        </div>
-        <div class = "Option">
-                <div class="MenuItem Home">
-                    <button class="Btn Home">Home</button> 
-                </div>
-                <div class="MenuItem Group">
-                    <button class="Btn Group">Group</button> 
-                </div>
-                <div class="MenuItem Mywork">
-                    <button class="Btn Mywork">My Work</button> 
-                </div>
-                <div class="MenuItem Incomplete">
-                    <button class="Btn Incomplete">Incomplete</button> 
-                </div>
-                <div class="MenuItem Important">
-                    <button class="Btn Important">Important</button> 
-                </div>
-                <div class="MenuItem Calendar">
-                    <button class="Btn Calendar">Calendar</button> 
-                </div>
-        </div>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="Calendar.css" />
+    <title>Calendar</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+
+<body> 
+    <div class="Menu" id="menuPanel">
+    <div class="IconMenu" id="menuToggle">
+      <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
     </div>
-    <!-- Main content -->
-     <div class="main">
-      <div class="Bar">
+    <div class="Option">
+      <div class="MenuItem Home">
+        <button class="Btn Home" id="btnHome">Home</button>
+      </div>
+      <div class="MenuItem Group">
+        <button class="Btn Group" id="btnGroup">Group</button>
+      </div>
+      <div class="MenuItem Mywork">
+        <button class="Btn Mywork" id="btnMywork">My Work</button>
+      </div>
+      <div class="MenuItem Incomplete">
+        <button class="Btn Incomplete active" id="btnIncomplete">Incomplete</button>
+      </div>
+      <div class="MenuItem Important">
+        <button class="Btn Important" id="btnImportant">Important</button>
+      </div>
+      <div class="MenuItem Calendar">
+        <button class="Btn Calendar" id="btnCalendar">Calendar</button>
+      </div>
+    </div>
+  </div>
+    <div class="Bar">
+            <div class="IconMenuBar hidden" id="menuToggleBar" style="cursor:pointer;">
+        <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
+      </div>
         <div class="Block NoteDate">
-            <button class="Note Date"> Jun 10, 2025</button>
+            <button class="Note Date" id="realDate"> Jun 10, 2025</button>
         </div>
         <div class="Block NoteTime">
-            <button class="Note Time"> 9:41 AM</button>
+            <button class="Note Time" id="realTimeClock"> 9:41 AM</button>
         </div>
         <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
             <div class="NoteSearch">
@@ -49,11 +51,42 @@
             </div>
         </form>
         <img class="searchicon" src="https://i.postimg.cc/1XhxYBPZ/image-removebg-preview.png" alt="Search" />
-        <div class="NoteSetting">
+        <div class="NoteSetting" id="noteSetting">
             <img class="settingicon" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+            <div id="settingPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                <div class="container">
+                  <div class="white-box"></div>
+                  <div class="line"></div>
+                  <div class="text">Setting</div>
+                  <div class="icon">
+                    <img class="settingicon-inner" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+                  </div>
+                </div>
+              </div>
         </div>
-        <div class="NoteNotification">
+        <div class="NoteNotification" id="noteNotification">
             <img class="notificationicon" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+            <div id="notificationPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                  <div class="container">
+                      <div class="label-important">Quan trọng</div>
+                          <div class="important-box"></div>
+                          <div class="important-text">Bạn có nhiệm vụ mới trong nhóm CSLT</div>
+                          <div class="important-time">1 phút trước</div>
+
+                          <div class="divider"></div>
+
+                          <div class="label-other">Các thông báo khác</div>
+                          <div class="other-box"></div>
+                          <div class="other-text">Bài tập về nhà CNXHKH sẽ hết hạn trong 15p tới</div>
+                          <div class="other-time">2 phút trước</div>
+                    <div class="white-box"></div>
+                    <div class="line"></div>
+                    <div class="text">Notification</div>
+                    <div class="icon">
+                      <img class="notificationicon-inner" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+                    </div>
+                  </div>
+            </div>
         </div>
         <div class="Username">
             <p> Username</p>
@@ -61,10 +94,9 @@
         <div class="NoteAvatar">
             <img class="avataricon" src="https://i.postimg.cc/0ybsjbVF/image-removebg-preview-3.png" alt="Avatar" />
         </div>
-     </div>
-</div>
+    </div>
 
-  <div class="calendar">
+   <div class="Content">
     <div class="calendar-container">
         <!-- Bảng lịch -->
           <!-- Cột lịch mỗi ngày -->
@@ -130,6 +162,7 @@
               <div class="hour-slot"></div>
              </div>
          </div>
+      
           <div class="day-column">
             <div class="day-label">
               <span class="weekday">Mon</span>
@@ -343,23 +376,92 @@
          </div>
           </div>
         </div>
-<script>
-const weekdays = document.querySelectorAll('.weekday');
-const daynums = document.querySelectorAll('.daynum');
-// Lấy ngày hôm nay
-const today = new Date();
-const startOfWeek = new Date(today);
-startOfWeek.setDate(today.getDate() - today.getDay()); // Bắt đầu từ Chủ nhật
-for (let i = 0; i < 7; i++) {
-  const currentDay = new Date(startOfWeek);
-  currentDay.setDate(startOfWeek.getDate() + i);
-
-  // 'short' sẽ ra Mon, Tue, Wed...
-  const options = { weekday: 'short' };
-  weekdays[i].textContent = currentDay.toLocaleDateString('en-US', options); 
-  daynums[i].textContent = currentDay.getDate();
-}
-</script>
+   </div>
 </body>
-</html>
+<script>
+   document.getElementById('btnHome').onclick = function() {
+      window.location.href = 'Home.html';
+    };
+    document.getElementById('btnIncomplete').onclick = function() {
+      window.location.href = 'Incomplete.html';
+    };
+    document.getElementById('btnGroup').onclick = function() {
+      window.location.href = 'Group.html';
+    };
+    document.getElementById('btnCalendar').onclick = function() {
+      window.location.href = 'Calendar.html';
+    };
+    document.getElementById('btnMywork').onclick = function() {
+      window.location.href = 'Mywork.html';
+    };
+    document.getElementById('btnImportant').onclick = function() {
+      window.location.href = 'Important.html';
+    };
+  /* Phần setting */
+        const noteSetting = document.getElementById('noteSetting');
+        const settingPanel = document.getElementById('settingPanel');
+        noteSetting.addEventListener('click', () => {
+          if (settingPanel.style.display === 'block') {
+            settingPanel.style.display = 'none';
+          } else {
+            settingPanel.style.display = 'block';
+          }
+        });
+        document.addEventListener('click', (e) => {
+  if (!noteSetting.contains(e.target) && !settingPanel.contains(e.target)) {
+    settingPanel.style.display = 'none';
+  }
+});
+      /* Phần notification*/
+      const noteNotification = document.getElementById('noteNotification');
+      const notificationPanel = document.getElementById('notificationPanel');
+      // Nhấn vào icon để mở/đóng panel
+      noteNotification.addEventListener('click', () => {
+        if (notificationPanel.style.display === 'block') {
+          notificationPanel.style.display = 'none';
+        } else {
+          notificationPanel.style.display = 'block';
+        }
+      });
+      // Nhấn ra ngoài thì panel tự đóng
+      document.addEventListener('click', (e) => {
+        if (!noteNotification.contains(e.target) && !notificationPanel.contains(e.target)) {
+          notificationPanel.style.display = 'none';
+        }
+      });
+    const iconMenu = document.getElementById('menuToggle');      // icon trong menu
+    const iconMenuBar = document.getElementById('menuToggleBar'); // icon trên thanh bar
+    const menu = document.querySelector('.Menu');
+    const body = document.body;
+    iconMenu.addEventListener('click', () => {
+      body.classList.add('menu-hidden');
+      iconMenuBar.classList.remove('hidden');
+    });
+    iconMenuBar.addEventListener('click', () => {
+      body.classList.remove('menu-hidden');
+      iconMenuBar.classList.add('hidden');
+    });
+    /* Đồng hồ trên thanh header chạy*/
+    // Đồng hồ thời gian thực (12h, AM/PM)
+function updateClock() {
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  // Định dạng 12h AM/PM
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 0 giờ -> 12 giờ
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  const timeString = `${hours}:${minutes} ${ampm}`;
+  document.getElementById('realTimeClock').textContent = timeString;
+  // Hiển thị ngày tháng năm dạng ví dụ: "August 12, 2025"
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('realDate').textContent = now.toLocaleDateString(undefined, options);
+}
+updateClock();
+setInterval(updateClock, 1000);
+</script>
 
+</html>
