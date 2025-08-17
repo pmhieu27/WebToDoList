@@ -3,6 +3,7 @@ const {
   getHomePage,
   getRegisterPage,
   getLoginPage,
+  postCreateUser,
 } = require("../controllers/homeController");
 const router = express.Router();
 
@@ -15,5 +16,7 @@ router.get("/home", getHomePage);
 router.get("/register", getRegisterPage);
 
 router.get("/login", getLoginPage);
+
+router.post("/create-user", postCreateUser);
 
 module.exports = router; //export default router;
