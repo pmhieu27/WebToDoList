@@ -1,25 +1,26 @@
+require('dotenv').config(); // Load environment variables from .env file
+const port = process.env.PORT || 8081;
+const hostname = process.env.HOST_NAME || 'localhost';
 const express = require('express');// Import the express module
 const path = require('path'); // Import the path module
-require('dotenv').config(); // Load environment variables from .env file
-console.log("Check env", process.env.PORT); // Log the environment variables
+const configViewgine = require('./config/viewgine'); // Import the view engine configuration
+const webrouters = require('./route/web'); // Import the web router
 const app = express(); // Create an instance of express
-const port = process.env.PORT; // Set the port to listen on
-const hostname = process.env.HOST_NAME; // Set the hostname
+const connection = require('./config/database'); // Import the database connection
 //config engines
-app.set('view engine', 'ejs'); // Set the view engine to ejs
-app.set('views', path.join(__dirname, 'views')); // Set the views directory
-app.use(express.static('public'))
-
+configViewgine(app); // Apply the view engine configuration
 //routes
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-});
-app.get('/abc', (req, res) => {
-    res.render('example.ejs') // Render the example.ejs view
-});
-app.get('/aaa', (req, res) => {
-    res.send('<h1>Lo cc</h1>')
-});
+app.use('/',webrouters);
+
+// Create the connection to database
+connection.query(
+    'SELECT * from users;',
+    function (err, results, fields) {
+    console.log(">>>results", results); // results contains rows returned by server
+    console.log(">>>fields", fields); // fields contains extra meta data about results, if available
+    }
+);
+
 app.listen(port, hostname, () => {
     console.log(`Example app listening on port ${port}`)
 });
