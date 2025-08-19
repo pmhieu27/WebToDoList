@@ -1,400 +1,912 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Work</title>
-  <link rel="stylesheet" href="Mywork.css"/>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" type="image/x-icon" />
-</head>
-<body>
-          <div class="Menu" id="menuPanel">
-    <div class="IconMenu" id="menuToggle">
-      <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
-    </div>
-    <div class="Option">
-      <div class="MenuItem Home">
-        <button class="Btn Home" id="btnHome">Home</button>
-      </div>
-      <div class="MenuItem Group">
-        <button class="Btn Group" id="btnGroup">Group</button>
-      </div>
-      <div class="MenuItem Mywork">
-        <button class="Btn Mywork active" id="btnMywork">My Work</button>
-      </div>
-      <div class="MenuItem Incomplete">
-        <button class="Btn Incomplete" id="btnIncomplete">Incomplete</button>
-      </div>
-      <div class="MenuItem Important">
-        <button class="Btn Important" id="btnImportant">Important</button>
-      </div>
-      <div class="MenuItem Calendar">
-        <button class="Btn Calendar" id="btnCalendar">Calendar</button>
-      </div>
-    </div>
-  </div>
-    <div class="Bar">
-            <div class="IconMenuBar hidden" id="menuToggleBar" style="cursor:pointer;">
-        <img class="menuicon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" alt="Menu" />
-      </div>
-        <div class="Block NoteDate">
-            <button class="Note Date" id="realDate"> Jun 10, 2025</button>
-        </div>
-        <div class="Block NoteTime">
-            <button class="Note Time" id="realTimeClock"> 9:41 AM</button>
-        </div>
-        <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
-            <div class="NoteSearch">
-                <input class="Search" type="text" placeholder="Search..." />
-            </div>
-        </form>
-        <img class="searchicon" src="https://i.postimg.cc/1XhxYBPZ/image-removebg-preview.png" alt="Search" />
-        <div class="NoteSetting" id="noteSetting">
-            <img class="settingicon" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
-            <div id="settingPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
-                <div class="container">
-                  <div class="white-box"></div>
-                  <div class="line"></div>
-                  <div class="text">Setting</div>
-                  <div class="icon">
-                    <img class="settingicon-inner" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
-                  </div>
-                </div>
-              </div>
-        </div>
-        <div class="NoteNotification" id="noteNotification">
-            <img class="notificationicon" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
-            <div id="notificationPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
-                  <div class="container">
-                      <div class="label-important">Quan trọng</div>
-                          <div class="important-box"></div>
-                          <div class="important-text">Bạn có nhiệm vụ mới trong nhóm CSLT</div>
-                          <div class="important-time">1 phút trước</div>
-                          <div class="divider"></div>
-                          <div class="label-other">Các thông báo khác</div>
-                          <div class="other-box"></div>
-                          <div class="other-text">Bài tập về nhà CNXHKH sẽ hết hạn trong 15p tới</div>
-                          <div class="other-time">2 phút trước</div>
-                    <div class="white-box"></div>
-                    <div class="line"></div>
-                    <div class="text">Notification</div>
-                    <div class="icon">
-                      <img class="notificationicon-inner" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
-                    </div>
-                  </div>
-            </div>
-        </div>
-        <div class="Username">
-            <p> Username</p>
-        </div>
-        <div class="NoteAvatar">
-            <img class="avataricon" src="https://i.postimg.cc/0ybsjbVF/image-removebg-preview-3.png" alt="Avatar" />
-        </div>
-    </div>
- <div class="Content">
-   <header class="header">
-        <h1>My work</h1>
-        <div class="actions">
-          <button class="new-task">New task ▼</button>
-        </div>
-      </header>
-      <!-- Table -->
-      <table>
-        <thead>
-          <tr>
-            <th>Tick</th>
-            <th>Time</th>
-            <th>Name</th>
-            <th>Group</th>
-            <th>Note</th>
-            <th>Important</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="checkbox" class="task-check" ></td>
-            <td>
-              <div>Jun 10, 2025</div>
-              <div>9:00 AM</div>
-            </td>
-            <td>Bài tập về nhà tiết 10</td>
-            <td>Nhóm CNXH</td>
-             <td>
-              <span class="note-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>
-             <div class="note-popup">
-              <strong>Task 2</strong><br/>
-            <ol style="padding-left: 1.2em;">
-            <li>
-            <span style="font-weight: bold;">Hàm số kinh tế:</span>
-             Biểu diễn mối quan hệ giữa các biến kinh tế.<br>
-             Ví dụ: Hàm cầu, hàm cung, hàm chi phí, hàm lợi nhuận.
-            </li>
-            <li>
-            <span style="font-weight: bold;">Đạo hàm và ứng dụng:</span>
-            Tính tốc độ thay đổi (biên) của hàm.<br>
-            Tìm điểm cực trị (cực đại, cực tiểu) → Tối ưu hóa lợi nhuận / chi phí.
-              </li>
-            </ol>
-            <td class="star">☆</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="task-check" ></td>
-            <td>
-              <div>Jun 10, 2025</div>
-              <div>10:15 PM</div>
-            </td>
-            <td>Bài tập XSTK</td>
-            <td>Cá nhân</td>
-            <td></td>
-            <td class="star">☆</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="task-check" ></td>
-            <td>
-              <div>Jun 11, 2025</div>
-              <div>9:00 PM</div>
-            </td>
-            <td>Ôn tập kiểu dữ liệu</td>
-            <td>Nhóm CSLT</td>
-            <td>
-              <span class="note-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>
-              <div class="note-popup">
-              <strong>Task 4</strong><br/>
-             <div style="padding-left: 1.2em;">
-             <p><strong>1. Mục tiêu:</strong></p>
-             <ul style="margin: 4px 0 0 1.2em;" class="list">
-                  <li>Xóa bỏ bất công, chênh lệch giàu nghèo.</li>
-                  <li>Nâng cao đời sống vật chất và tinh thần cho nhân dân.</li>
-                  <li>Thực hiện dân giàu, nước mạnh, dân chủ, công bằng, văn minh.</li>
-             </ul>
-             </div>
-           </div>
-           </td>
-          <td class="star">☆ </td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="task-check"></td>
-            <td>
-              <div>Jun 12, 2025</div>
-              <div>11:00 AM</div>
-            </td>
-            <td>Bài tập Toán kt 1</td>
-            <td>Cá nhân</td>
-            <td>
-              <span class="note-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>
-             <div class="note-popup">
-              <strong>Task 3</strong><br/>
-            <ol style="padding-left: 1.2em;">
-            <li>
-            <span style="font-weight: bold;">Hàm số kinh tế:</span>
-             Biểu diễn mối quan hệ giữa các biến kinh tế.<br>
-             Ví dụ: Hàm cầu, hàm cung, hàm chi phí, hàm lợi nhuận.
-            </li>
-            <li>
-            <span style="font-weight: bold;">Đạo hàm và ứng dụng:</span>
-            Tính tốc độ thay đổi (biên) của hàm.<br>
-            Tìm điểm cực trị (cực đại, cực tiểu) → Tối ưu hóa lợi nhuận / chi phí.
-              </li>
-            </ol>            
-            <td class="star">☆</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" class="task-check" ></td>
-            <td>
-              <div>Jun 12, 2025</div>
-              <div>9:30 PM</div>
-            </td>
-            <td>Bài tập Kinh tế chính trị</td>
-            <td>Cá nhân</td>
-            <td></td>
-            <td class="star" >☆</td>
-          </tr>
-        </tbody>
-      </table>
- </div>
-<!-- Task Form Modal -->
-<div class="task-modal" id="taskModal">
-  <div class="task-form">
-    <h2>New task</h2>
-    <label><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-check-icon lucide-user-round-check"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/></svg> Status</span><input type="text" /></label>
-    <label><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-list-icon lucide-layout-list"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><path d="M14 4h7"/><path d="M14 9h7"/><path d="M14 15h7"/><path d="M14 20h7"/></svg> Task division</span><input type="text" /></label>
-    <label><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days-icon lucide-calendar-days"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg> Due date</span><input type="date" id="date" name="date"><br></label>
-    <label><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg> Group</span><input type="text" /></label>
-    <button class="create-task-btn">Create task</button>
-  </div>
-</div>
-<script>
-  document.querySelectorAll('.task-check').forEach(checkbox => {
-    checkbox.addEventListener('change', function () {
-      const row = this.closest('tr');
-      if (this.checked) {
-        row.style.opacity = '0.3';
-      } else {
-        row.style.opacity = '1';
-      }
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const starOffSVG = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-           viewBox="0 0 24 24" fill="none" stroke="currentColor"
-           stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
-           class="lucide lucide-star-off">
-        <path d="M8.34 8.34 2 9.27l5 4.87L5.82 21 12 17.77 18.18 21l-.59-3.43"/>
-        <path d="M18.42 12.76 22 9.27l-6.91-1L12 2l-1.44 2.91"/>
-        <line x1="2" y1="2" x2="22" y2="22"/>
-      </svg>
-    `;
-
-    const starSVG = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-    `;
-
-    const stars = document.querySelectorAll(".star");
-
-    stars.forEach(td => {
-      td.innerHTML = starOffSVG;
-
-      td.addEventListener("click", () => {
-        const currentSVG = td.querySelector("svg");
-        const isOff = currentSVG.classList.contains("lucide-star-off");
-        td.innerHTML = isOff ? starSVG : starOffSVG;
-      });
-    });
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const notes = document.querySelectorAll(".note-icon");
-
-    notes.forEach(icon => {
-      icon.addEventListener("click", () => {
-        const popup = icon.nextElementSibling;
-
-        // Ẩn popup khác
-        document.querySelectorAll(".note-popup").forEach(p => {
-          if (p !== popup) p.style.display = "none";
-        });
-
-        popup.style.display = popup.style.display === "block" ? "none" : "block";
-
-        const rect = icon.getBoundingClientRect();
-        popup.style.left = `${rect.left + window.scrollX + 30}px`;
-        popup.style.top = `${rect.top + window.scrollY + 10}px`;
-      });
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest(".note-icon") && !e.target.closest(".note-popup")) {
-        document.querySelectorAll(".note-popup").forEach(p => p.style.display = "none");
-      }
-    });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const newTaskBtn = document.querySelector(".new-task");
-    const taskModal = document.getElementById("taskModal");
-
-    newTaskBtn.addEventListener("click", () => {
-      taskModal.style.display = "flex";
-    });
-
-    taskModal.addEventListener("click", (e) => {
-      if (e.target === taskModal) {
-        taskModal.style.display = "none";
-      }
-    });
-  });
-</script>
-<script>
-const iconMenu = document.getElementById('menuToggle');      // icon trong menu
-    const iconMenuBar = document.getElementById('menuToggleBar'); // icon trên thanh bar
-    const menu = document.querySelector('.Menu');
-    const body = document.body;
-
-    iconMenu.addEventListener('click', () => {
-      body.classList.add('menu-hidden');
-      iconMenuBar.classList.remove('hidden');
-    });
-
-    iconMenuBar.addEventListener('click', () => {
-      body.classList.remove('menu-hidden');
-      iconMenuBar.classList.add('hidden');
-    });
-// Connect
-   document.getElementById('btnHome').onclick = function() {
-      window.location.href = 'Home.html';
-    };
-    document.getElementById('btnIncomplete').onclick = function() {
-      window.location.href = 'Incomplete.html';
-    };
-    document.getElementById('btnGroup').onclick = function() {
-      window.location.href = 'Group.html';
-    };
-    document.getElementById('btnCalendar').onclick = function() {
-      window.location.href = 'Calendar.html';
-    };
-    document.getElementById('btnMywork').onclick = function() {
-      window.location.href = 'Mywork.html';
-    };
-    document.getElementById('btnImportant').onclick = function() {
-      window.location.href = 'Important.html';
-    };
-  /* Phần notification*/
-    const noteNotification = document.getElementById('noteNotification');
-    const notificationPanel = document.getElementById('notificationPanel');
-
-      // Nhấn vào icon để mở/đóng panel
-      noteNotification.addEventListener('click', () => {
-        if (notificationPanel.style.display === 'block') {
-          notificationPanel.style.display = 'none';
-        } else {
-          notificationPanel.style.display = 'block';
-        }
-      });
-  /* Phần setting */
-        const noteSetting = document.getElementById('noteSetting');
-        const settingPanel = document.getElementById('settingPanel');
-        noteSetting.addEventListener('click', () => {
-          if (settingPanel.style.display === 'block') {
-            settingPanel.style.display = 'none';
-          } else {
-            settingPanel.style.display = 'block';
-          }
-        });
-        document.addEventListener('click', (e) => {
-  if (!noteSetting.contains(e.target) && !settingPanel.contains(e.target)) {
-    settingPanel.style.display = 'none';
-  }
-});
-/* Đồng hồ trên thanh header chạy*/
-    // Đồng hồ thời gian thực (12h, AM/PM)
-function updateClock() {
-  const now = new Date();
-  let hours = now.getHours();
-  let minutes = now.getMinutes();
-  let seconds = now.getSeconds();
-  // Định dạng 12h AM/PM
-  const ampm = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // 0 giờ -> 12 giờ
-  hours = hours < 10 ? '0' + hours : hours;
-  minutes = minutes < 10 ? '0' + minutes : minutes;
-  const timeString = `${hours}:${minutes} ${ampm}`;
-  document.getElementById('realTimeClock').textContent = timeString;
-  // Hiển thị ngày tháng năm dạng ví dụ: "August 12, 2025"
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  document.getElementById('realDate').textContent = now.toLocaleDateString(undefined, options);
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
 }
-updateClock();
-setInterval(updateClock, 1000);
-</script>
+
+/* Grid layout chính */
+body {
+    display: grid;
+    grid-template-columns: 170px 6fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+        "aa  cc"
+        "aa  bb";
+        height: 100vh;
+}
+/* Sidebar */
+/* Sidebar */
+.Menu {
+    grid-area: aa;
+    border-right: 2px solid black; /* Một đường thẳng chạy suốt */
+    background-color: white;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Item con */
+.MenuItem {
+    margin-bottom: 15px;
+}
 
 
-</body>
-</html>
+/* Header */
+.Bar {
+    grid-area: cc;
+    border-bottom: 2px solid black; /* Giữ đường ngang */
+}
+/* Main Content */
+.Content {
+  grid-area: bb;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+                                            /* Menu */
+.IconMenu{
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 70px;
+    text-align: right;
+}
+.menuicon {
+    height: 25px;
+    width: auto;
+}
+                                            /* Option Menu */
+/* Sidebar */
+
+
+.Btn {
+    background-color: rgba(217, 217, 217, 1);
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Icon Option Menu */
+.Btn::before {
+    content: ""; /* BẮT BUỘC để ::before hiện ra */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin-right: 8px; /* Tuỳ chỉnh nếu cần khoảng cách với chữ */
+    vertical-align: middle; /* Can giữa theo dòng chữ */
+}
+/* Hover effect */
+/* Hover cho tất cả nút */
+.Btn:hover {
+    background-color: #b0b0b0; /* Xám đậm hơn */
+    transform: translateY(-2px); /* Nổi lên */
+    transition: all 0.2s ease;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+
+/* Active chỉ cho Incomplete */
+.Btn.Mywork.active {
+    background-color: #a6a6a6; /* Màu khác để biết đang chọn */
+   border: 2px solid black; 
+    transform: translateY(2px); /* Ấn xuống */
+    pointer-events: none; /* Không cho bấm lại */
+}
+
+.Btn.Home::before {
+    background-image: url('https://i.postimg.cc/Fzs66Bq8/image-removebg-preview-4.png');
+    background-size: 50px 50px;
+}
+.Btn.Group::before {
+    background-image: url('https://i.postimg.cc/Wbmqt51F/image-removebg-preview-6.png');
+}
+.Btn.Mywork::before {
+    background-image: url('https://i.postimg.cc/hGnBv0hj/image-removebg-preview-11.png');
+    background-size: 50px 50px;
+}
+.Btn.Incomplete::before {
+    background-image: url('https://i.postimg.cc/h46Nh05B/image-removebg-preview-8.png');
+}
+.Btn.Important:before {
+    background-image: url('https://i.postimg.cc/KYbC5vPv/image-removebg-preview-14.png');
+    background-size: 30px 25px;
+}
+.Btn.Calendar:before {
+    background-image: url('https://i.postimg.cc/GhM8kHvd/image-removebg-preview-10.png');
+}
+                                             /* Bar */
+.Bar {
+    display: grid;
+    grid-template-columns: 150px  120px  15fr 5px  1fr  1fr  2fr  1fr;
+}
+                                            /* Date Time */
+.Block{
+    padding: 15px ;
+    text-align: left;
+}
+.NoteDate{
+    padding-left: 40px;
+}
+
+.Note{
+    background-color:rgba(13, 13, 228, 0.12);
+    border-radius: 6px;
+    color: rgba(0, 122, 255, 1);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 600;
+    text-align: center;
+}
+.Date{
+    height: 30px;
+    width: 110px;
+    border: none;
+}
+.Time{
+    height: 30px;
+    width: 85px;
+    border: none;
+}
+                                            /* Search */
+.NoteSearch{
+    text-align:end;
+    padding: 10px;
+}
+.Search{
+    height: 35px;
+    width: 35vw;                     
+    max-width: 700px;  
+    border-radius: 9px;
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+    padding-left: 10px;
+}  
+.searchicon {
+    padding-top: 15px;
+    height: 15px;
+    width: auto;
+    position: relative;
+    right: 45px;
+    top: 6px;
+}
+
+                                            /* Setting */
+.NoteSetting {
+  position: relative;
+    padding-top: 12.5px;
+    text-align: left;
+    left: 30px;
+}
+.settingicon{
+    height: 35px;
+    width: auto;
+}
+                                            /* Notification */
+.NoteNotification{
+    padding-top: 9px;
+    text-align: left;
+    padding-left: 25px;
+}
+.notificationicon{
+    height: 40px;
+    width: auto;
+}
+                                            /* Username */
+.Username{
+    padding-top: 19px;
+    padding-right: 0px;
+    text-align: right;
+    color: rgba(0, 122, 255, 1);
+    font-size: 18px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Avatar */
+.NoteAvatar{
+    position: relative;
+    top: -16px;
+    text-align: left;
+ 
+}
+.avataricon{
+    height: 90px;
+    width: auto;
+}
+                                       /* Content */
+.Section {
+    max-height: 400px; 
+  padding: 0 20px 0 40px;
+  width: 95%;
+  overflow-y: auto;
+  font-size: 20;
+}
+.Section.collapsed {
+  display: none;
+}
+.table-row:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.table-header,  
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 30px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.table-header {
+    font-weight: bold;
+    padding-bottom: 5px;
+    font-size: 17px;
+}
+
+.table-row {
+    padding: 8px 0 1px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.task-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.due-grp{
+    color:#8e8e8e ;
+}
+
+.due-time,
+.time-delayed {
+    color: #8e8e8e;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.material-icons {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Responsive: trên màn nhỏ co lại thành danh sách */
+@media (max-width: 600px) {
+    .table-header {
+        display: none; /* Ẩn header */
+    }
+
+    .table-row {
+        grid-template-columns: 1fr; 
+        gap: 4px;
+    }
+
+    .table-row > div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .task-name {
+        font-weight: bold;
+    }
+} 
+/* Phần ẩn */
+/* Phần Setting*/
+.NoteSetting {
+  position: relative;
+  display: inline-block;
+  padding-top: 12.5px;
+  text-align: left;
+  left: 30px;
+}
+
+#settingPanel {
+  display: none;
+  position: absolute;
+  top: 45px;  /* tăng khoảng cách hoặc điều chỉnh */
+  right: 0;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position:relative;
+  top: 8px;
+  right: 12px;
+  width: 32.5px;
+  height: 32.5px;
+}
+
+.settingicon-inner {
+color: black;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+/* Phần Thông báo*/
+
+#notificationPanel {
+  display: none;
+  position: fixed; /* hoặc absolute, chọn 1 */
+  top: 45px;
+  right: 10px;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  width: 35px;
+  height: 35px;
+}
+
+.notificationicon-inner {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+/* Label Quan trọng */
+/* Label Quan trọng */
+.label-important {
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo quan trọng */
+.important-box {
+  width: 220px;
+  height: 28px;
+  position: absolute;
+  left: 15px;
+  top: 60px;
+  background: #C8C1C1;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo quan trọng */
+.important-text {
+  position: absolute;
+  left: 20px;
+  top: 65px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo quan trọng */
+.important-time {
+  position: absolute;
+  left: 180px;
+  top: 77px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Đường kẻ phân cách */
+.divider {
+  width: 220px;
+  height: 0;
+  position: absolute;
+  left: 15px;
+  top: 95px;
+  outline: 1px solid black;
+  outline-offset: -0.5px;
+}
+
+/* Label Các thông báo khác */
+.label-other {
+  position: absolute;
+  left: 10px;
+  top: 105px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo khác */
+.other-box {
+  width: 220px;
+  height: 30px;
+  position: absolute;
+  left: 15px;
+  top: 125px;
+  background: #FFF4F4;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo khác */
+.other-text {
+  position: absolute;
+  left: 20px;
+  top: 130px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo khác */
+.other-time {
+  position: absolute;
+  left: 180px;
+  top: 145px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+
+/* Ẩn menu */
+.menu-hidden .Menu {
+  display: none;
+}
+
+/* Khi menu ẩn, phần còn lại chiếm full width */
+.menu-hidden .Content,
+.menu-hidden .Bar {
+  grid-column: 1 / -1; /* chiếm hết các cột */
+}
+
+/* Ẩn icon menu trong menu */
+.menu-hidden #menuToggle {
+  display: none;
+}
+
+/* Hiện icon menu trên thanh bar */
+.menu-hidden #menuToggleBar {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 23px;
+  height: 23px;
+  z-index: 2000;
+}
+
+#menuToggleBar img.menuicon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Ẩn icon menu trên thanh bar khi menu hiện */
+#menuToggleBar.hidden {
+  display: none;
+}
+.Block.NoteDate,
+.Block.NoteTime {
+  margin-left: 20px;
+}
+#realTimeClock,
+#realDate {
+  font-size: 14px; /* bạn có thể chỉnh nhỏ hơn hoặc lớn hơn tùy ý */
+  font-weight: normal;
+  /* thêm nếu muốn kiểu chữ khác */
+  /* font-family: 'Arial', sans-serif; */
+}
+/*my work*/
+.header {
+  display: flex;
+  align-items: center;       
+  justify-content: space-between; 
+  padding: 0 20px;          
+  height: 60px;            
+}
+
+.header h1 {
+  margin: 0; 
+  font-size: 40px;
+}
+
+.new-task {
+  background-color: #007bff;   
+  color: white;               
+  border: none;                
+  padding: 8px 16px;          
+  border-radius: 6px;         
+  font-size: 16px;             
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;            
+  transition: 0.2s ease;     
+}
+
+.new-task:hover {
+  background-color: #0056b3;  
+}
+
+/* Table */
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed; 
+  word-wrap: break-word;
+}
+
+tr {
+  transition: opacity 0.3s ease;
+}
+
+th:nth-child(1), td:nth-child(1){
+   width: 70px;
+  max-width: 70px;
+  text-align: center;
+}  
+th:nth-child(2), td:nth-child(2){
+   width: 150px;
+  max-width: 150px;
+  text-align: center;
+}  
+th:nth-child(5), td:nth-child(5){
+   width: 80px;
+  max-width: 80px;
+  text-align: center;
+}  
+th:nth-child(6), td:nth-child(6) {  
+  width: 100px;
+  max-width: 100px;
+  text-align: center;
+}
+.star {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s ease;
+  user-select: none; 
+}
+
+.star:hover {
+  color: orange;
+}
+
+.star.selected {
+  color: gold;
+  font-weight: bold;
+}
+
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td div {
+  line-height: 1.3;
+}
+
+.note-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transform: translateX(-100%);
+
+  margin-top: 4px;
+  max-width: 240px;
+  width: max-content;
+
+  background-color: white;
+  border: 2px solid #3f90f7;
+  border-radius: 18px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: black;
+
+  display: none;
+  z-index: 999;
+
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+
+.note-popup h3 {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 12px;
+  user-select: none; 
+}
+
+.note-popup ol, .note-popup ul {
+  padding-left: 20px;
+  margin: 0;
+  user-select: none; 
+}
+.note-popup ul {
+  list-style-type: disc;
+  user-select: none; 
+}
+
+.note-icon {
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  color: #0f1010;
+  margin-left: 8px;
+   user-select: none; 
+}
+ol li > div {
+  display: inline;
+}
+
+ol li ul {
+  margin-left: 1em;
+  margin-top: 4px;
+}
+
+ul {
+  list-style-type: disc; 
+  padding-left: 1.5em;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between; /* đẩy phần bên phải qua phải */
+  align-items: center;
+  padding: 8px 20px;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.top-bar svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.top-bar .username {
+  font-size: 14px;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.top-bar .left span,
+.top-bar .left button {
+  margin-right: 1em;
+}
+
+.left-space {
+  width: 200px; 
+}
+
+.top-right {
+  display: flex;
+  align-items: center;       
+  gap: 12px;                 
+  padding-right: 20px;
+}
+
+.top-right > div {
+  margin-right: 12px;
+  gap: 30px;
+}
+
+.top-right-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.task-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3); /* nền mờ */
+  display: none; /* ẩn mặc định */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.task-form {
+  background: white;
+  padding: 24px 30px;
+  border-radius: 12px;
+  border: 1px solid #888;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  width: 400px;
+  font-family: Arial, sans-serif;
+}
+
+.task-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  background: #ddd;
+  padding: 6px 10px;
+  font-size: 20px;
+}
+
+.task-form label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.task-form label span {
+  display: flex;
+  align-items: center; 
+  width: 120px;
+  gap: 6px; 
+}
+
+.label-text {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-task-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #ccc;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
