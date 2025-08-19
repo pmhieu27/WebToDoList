@@ -1032,7 +1032,6 @@ color: black;
   border-radius: 4px;
 }
 
-/* Nội dung thông báo khác */
 .other-text {
   position: absolute;
   left: 20px;
@@ -1046,7 +1045,6 @@ color: black;
   word-wrap: break-word;
 }
 
-/* Thời gian thông báo khác */
 .other-time {
   position: absolute;
   left: 180px;
@@ -1130,10 +1128,10 @@ color: black;
 }
 #realTimeClock,
 #realDate {
-  font-size: 14px; /* bạn có thể chỉnh nhỏ hơn hoặc lớn hơn tùy ý */
+  font-size: 14px; 
   font-weight: normal;
-  /* thêm nếu muốn kiểu chữ khác */
-  /* font-family: 'Arial', sans-serif; */
+
 }
+
 
 
