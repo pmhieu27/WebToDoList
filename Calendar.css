@@ -1,0 +1,821 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Grid layout chính */
+body {
+    display: grid;
+    grid-template-columns: 170px 6fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+        "aa  cc"
+        "aa  bb";
+        height: 100vh;
+}
+/* Sidebar */
+/* Sidebar */
+.Menu {
+    grid-area: aa;
+    border-right: 2px solid black; /* Một đường thẳng chạy suốt */
+    background-color: white;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Item con */
+.MenuItem {
+    margin-bottom: 15px;
+}
+
+
+/* Header */
+.Bar {
+    grid-area: cc;
+    border-bottom: 2px solid black; /* Giữ đường ngang */
+}
+/* Main Content */
+.Content {
+  grid-area: bb;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+                                            /* Menu */
+.IconMenu{
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 70px;
+    text-align: right;
+}
+.menuicon {
+    height: 25px;
+    width: auto;
+}
+                                            /* Option Menu */
+/* Sidebar */
+
+
+.Btn {
+    background-color: rgba(217, 217, 217, 1);
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Icon Option Menu */
+.Btn::before {
+    content: ""; /* BẮT BUỘC để ::before hiện ra */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin-right: 8px; /* Tuỳ chỉnh nếu cần khoảng cách với chữ */
+    vertical-align: middle; /* Can giữa theo dòng chữ */
+}
+/* Hover effect */
+/* Hover cho tất cả nút */
+.Btn:hover {
+    background-color: #b0b0b0; /* Xám đậm hơn */
+    transform: translateY(-2px); /* Nổi lên */
+    transition: all 0.2s ease;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+
+/* Active chỉ cho Incomplete */
+.Btn.Incomplete.active {
+    background-color: #a6a6a6; /* Màu khác để biết đang chọn */
+   border: 2px solid black; 
+    transform: translateY(2px); /* Ấn xuống */
+    pointer-events: none; /* Không cho bấm lại */
+}
+
+.Btn.Home::before {
+    background-image: url('https://i.postimg.cc/Fzs66Bq8/image-removebg-preview-4.png');
+    background-size: 50px 50px;
+}
+.Btn.Group::before {
+    background-image: url('https://i.postimg.cc/Wbmqt51F/image-removebg-preview-6.png');
+}
+.Btn.Mywork::before {
+    background-image: url('https://i.postimg.cc/hGnBv0hj/image-removebg-preview-11.png');
+    background-size: 50px 50px;
+}
+.Btn.Incomplete::before {
+    background-image: url('https://i.postimg.cc/h46Nh05B/image-removebg-preview-8.png');
+}
+.Btn.Important:before {
+    background-image: url('https://i.postimg.cc/KYbC5vPv/image-removebg-preview-14.png');
+    background-size: 30px 25px;
+}
+.Btn.Calendar:before {
+    background-image: url('https://i.postimg.cc/GhM8kHvd/image-removebg-preview-10.png');
+}
+                                             /* Bar */
+.Bar {
+    display: grid;
+    grid-template-columns: 150px  120px  15fr 5px  1fr  1fr  2fr  1fr;
+}
+                                            /* Date Time */
+.Block{
+    padding: 15px ;
+    text-align: left;
+}
+.NoteDate{
+    padding-left: 40px;
+}
+
+.Note{
+    background-color:rgba(13, 13, 228, 0.12);
+    border-radius: 6px;
+    color: rgba(0, 122, 255, 1);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 600;
+    text-align: center;
+}
+.Date{
+    height: 30px;
+    width: 110px;
+    border: none;
+}
+.Time{
+    height: 30px;
+    width: 85px;
+    border: none;
+}
+                                            /* Search */
+.NoteSearch{
+    text-align:end;
+    padding: 10px;
+}
+.Search{
+    height: 35px;
+    width: 35vw;                     
+    max-width: 700px;  
+    border-radius: 9px;
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+    padding-left: 10px;
+}  
+.searchicon {
+    padding-top: 15px;
+    height: 15px;
+    width: auto;
+    position: relative;
+    right: 45px;
+    top: 6px;
+}
+
+                                            /* Setting */
+.NoteSetting {
+  position: relative;
+    padding-top: 12.5px;
+    text-align: left;
+    left: 30px;
+}
+.settingicon{
+    height: 35px;
+    width: auto;
+}
+                                            /* Notification */
+.NoteNotification{
+    padding-top: 9px;
+    text-align: left;
+    padding-left: 25px;
+}
+.notificationicon{
+    height: 40px;
+    width: auto;
+}
+                                            /* Username */
+.Username{
+    padding-top: 19px;
+    padding-right: 0px;
+    text-align: right;
+    color: rgba(0, 122, 255, 1);
+    font-size: 18px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Avatar */
+.NoteAvatar{
+    position: relative;
+    top: -16px;
+    text-align: left;
+ 
+}
+.avataricon{
+    height: 90px;
+    width: auto;
+}
+                                       /* Content */
+.Section {
+    max-height: 400px; 
+  padding: 0 20px 0 40px;
+  width: 95%;
+  overflow-y: auto;
+  font-size: 20;
+}
+.Section.collapsed {
+  display: none;
+}
+.table-row:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.table-header,  
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 30px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.table-header {
+    font-weight: bold;
+    padding-bottom: 5px;
+    font-size: 17px;
+}
+
+.table-row {
+    padding: 8px 0 1px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.task-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.due-grp{
+    color:#8e8e8e ;
+}
+
+.due-time,
+.time-delayed {
+    color: #8e8e8e;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.material-icons {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Responsive: trên màn nhỏ co lại thành danh sách */
+@media (max-width: 600px) {
+    .table-header {
+        display: none; /* Ẩn header */
+    }
+
+    .table-row {
+        grid-template-columns: 1fr; 
+        gap: 4px;
+    }
+
+    .table-row > div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .task-name {
+        font-weight: bold;
+    }
+} 
+/* Phần ẩn */
+/* Phần Setting*/
+.NoteSetting {
+  position: relative;
+  display: inline-block;
+  padding-top: 12.5px;
+  text-align: left;
+  left: 30px;
+}
+
+#settingPanel {
+  display: none;
+  position: absolute;
+  top: 45px;  /* tăng khoảng cách hoặc điều chỉnh */
+  right: 0;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position:relative;
+  top: 8px;
+  right: 12px;
+  width: 32.5px;
+  height: 32.5px;
+}
+
+.settingicon-inner {
+color: black;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+/* Phần Thông báo*/
+
+#notificationPanel {
+  display: none;
+  position: fixed; /* hoặc absolute, chọn 1 */
+  top: 45px;
+  right: 10px;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  width: 35px;
+  height: 35px;
+}
+
+.notificationicon-inner {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+/* Label Quan trọng */
+/* Label Quan trọng */
+.label-important {
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo quan trọng */
+.important-box {
+  width: 220px;
+  height: 28px;
+  position: absolute;
+  left: 15px;
+  top: 60px;
+  background: #C8C1C1;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo quan trọng */
+.important-text {
+  position: absolute;
+  left: 20px;
+  top: 65px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo quan trọng */
+.important-time {
+  position: absolute;
+  left: 180px;
+  top: 77px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Đường kẻ phân cách */
+.divider {
+  width: 220px;
+  height: 0;
+  position: absolute;
+  left: 15px;
+  top: 95px;
+  outline: 1px solid black;
+  outline-offset: -0.5px;
+}
+
+/* Label Các thông báo khác */
+.label-other {
+  position: absolute;
+  left: 10px;
+  top: 105px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo khác */
+.other-box {
+  width: 220px;
+  height: 30px;
+  position: absolute;
+  left: 15px;
+  top: 125px;
+  background: #FFF4F4;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo khác */
+.other-text {
+  position: absolute;
+  left: 20px;
+  top: 130px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo khác */
+.other-time {
+  position: absolute;
+  left: 180px;
+  top: 145px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+
+/* Ẩn menu */
+.menu-hidden .Menu {
+  display: none;
+}
+
+/* Khi menu ẩn, phần còn lại chiếm full width */
+.menu-hidden .Content,
+.menu-hidden .Bar {
+  grid-column: 1 / -1; /* chiếm hết các cột */
+}
+
+/* Ẩn icon menu trong menu */
+.menu-hidden #menuToggle {
+  display: none;
+}
+
+/* Hiện icon menu trên thanh bar */
+.menu-hidden #menuToggleBar {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 23px;
+  height: 23px;
+  z-index: 2000;
+}
+
+#menuToggleBar img.menuicon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Ẩn icon menu trên thanh bar khi menu hiện */
+#menuToggleBar.hidden {
+  display: none;
+}
+.Block.NoteDate,
+.Block.NoteTime {
+  margin-left: 20px;
+}
+#realTimeClock,
+#realDate {
+  font-size: 14px; /* bạn có thể chỉnh nhỏ hơn hoặc lớn hơn tùy ý */
+  font-weight: normal;
+  /* thêm nếu muốn kiểu chữ khác */
+  /* font-family: 'Arial', sans-serif; */
+}
+/*calendar*/
+.calendar {
+  display: flex;
+  overflow-y: auto;   
+  overflow-x: hidden; 
+  width: 100%;
+  height: calc(100vh - var(--bar-h));
+  flex:1;
+  position: relative;
+  margin-top: 2px;
+  border-top: 2px solid #000000; 
+}
+.calendar-header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+.calendar-container {
+  height: 100vh;
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+}
+.calendar-grid {
+  display: flex;
+  flex-grow: 1;
+  border-left: 1px solid #ccc;
+  position: relative;
+  width: 100%;
+  grid-template-rows: repeat(24, 60px);
+  flex-shrink: 0; 
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+.calendar-content {
+  height: calc(24 * 60px);
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+}
+.calendar-columns {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+}
+.days-header {
+    display: flex;
+    border-top: 1px solid #ccc; 
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  border-bottom: 1px solid #000;
+}
+.day-label .weekday {
+  font-size: 14px;
+  color: #777;
+  text-transform: uppercase;
+  padding-top: 8px;
+}
+.day-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  flex: 1;
+  border-right: 1px solid #ccc;
+  position: relative;
+  background-color: #fff;
+  height: 100%; 
+}
+.day-label .daynum {
+  font-size: 30px;
+  font-weight: 500;
+  color: #333;
+}
+.day-label {
+  height: 50px;
+  background: #f0f0f0;
+  display: flex;
+  flex: 1;
+  font-weight: bold;
+  flex-direction: column;   
+  align-items: center;       
+  justify-content: center; 
+  text-align: center;
+  font-weight: 500;
+  padding: 5px 5px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 2px solid #ccc;
+}
+.day-body {
+  height: calc(60px * 24); /* 24 giờ */
+  flex-grow: 1;
+}
+.days-header {
+  display: flex;
+  border-top: 1px solid #ccc; /* Thêm đường kẻ này */
+}
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+.time {
+  height: 60px;
+  font-size: 12px;
+  color: #666;
+  padding-left: 5px;
+}
+.time-column {
+  width: 60px;
+  background: #fafafa;
+  border-right: 1px solid #ccc;
+  position: sticky;
+  left: 0;
+  padding: 0px;
+  margin: 0px;
+  flex: 0 0 60px;
+  z-index: 5;
+}
+.time-row {
+  height: 60px;
+  padding-left: 5px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.time-slot {
+  height: 60px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+
+}
+.hour-slot {
+  height: 60px;
+  border-bottom: 1px solid #eee;
+}
+.hour-row {
+  height: 60px; 
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  font-size: 12px;
+  text-align: right;
+  padding-right: 5px;
+  line-height: 60px;
+}
+.event {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  padding: 4px;
+  font-size: 11px;
+  color: white;
+  border-radius: 5px;
+  line-height: 1.2;
+  font-size: 12px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.event {
+  color: white;            
+  font-size: 14px;          
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;              
+  box-sizing: border-box;
+}
+.event.red {
+  background-color: #eb978d; 
+}
+.event.blue {
+  background-color: rgb(79, 151, 252)
+}
+.event.green {
+  background-color: #32dc79;  
+}
+.event.orange {
+  background-color: #f6b958;  
+}
+.event.purple {
+  background-color: #9b59b6;  
+}
+@media (max-width: 768px) {
+  .calendar-grid {
+    grid-template-columns: repeat(7, minmax(90px, 1fr));
+  }
+}
