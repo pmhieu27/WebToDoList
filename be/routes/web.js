@@ -4,18 +4,17 @@ const {
   getRegisterPage,
   getLoginPage,
   postCreateUser,
+  getCreatePage,
 } = require("../controllers/homeController");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("hiếu vip vcl");
-});
-
-router.get("/home", getHomePage);
+router.get("/", getHomePage);
 
 router.get("/register", getRegisterPage);
 
 router.get("/login", getLoginPage);
+
+router.get("/create", getCreatePage);
 
 router.post("/create-user", postCreateUser);
 
