@@ -1,0 +1,1137 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Grid layout chính */
+body {
+    display: grid;
+    grid-template-columns: 170px 6fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+        "aa  cc"
+        "aa  bb";
+}
+/* Sidebar */
+/* Sidebar */
+.Menu {
+    grid-area: aa;
+    border-right: 2px solid black; /* Một đường thẳng chạy suốt */
+    background-color: white;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Item con */
+.MenuItem {
+    margin-bottom: 15px;
+}
+
+
+/* Header */
+.Bar {
+    grid-area: cc;
+    border-bottom: 2px solid black; /* Giữ đường ngang */
+}
+/* Main Content */
+.Content {
+    grid-area: bb;
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+  
+}
+
+
+                                            /* Menu */
+.IconMenu{
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 70px;
+    text-align: right;
+}
+.menuicon {
+    height: 25px;
+    width: auto;
+}
+                                            /* Option Menu */
+/* Sidebar */
+
+
+.Btn {
+    background-color: rgba(217, 217, 217, 1);
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Icon Option Menu */
+.Btn::before {
+    content: ""; /* BẮT BUỘC để ::before hiện ra */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin-right: 8px; /* Tuỳ chỉnh nếu cần khoảng cách với chữ */
+    vertical-align: middle; /* Can giữa theo dòng chữ */
+}
+/* Hover effect */
+/* Hover cho tất cả nút */
+.Btn:hover {
+    background-color: #b0b0b0; /* Xám đậm hơn */
+    transform: translateY(-2px); /* Nổi lên */
+    transition: all 0.2s ease;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+
+.Btn.Home.active {
+    background-color: #a6a6a6; /* Màu khác để biết đang chọn */
+   border: 2px solid black; 
+    transform: translateY(2px); /* Ấn xuống */
+    pointer-events: none; /* Không cho bấm lại */
+}
+
+.Btn.Home::before {
+    background-image: url('https://i.postimg.cc/Fzs66Bq8/image-removebg-preview-4.png');
+    background-size: 50px 50px;
+}
+.Btn.Group::before {
+    background-image: url('https://i.postimg.cc/Wbmqt51F/image-removebg-preview-6.png');
+}
+.Btn.Mywork::before {
+    background-image: url('https://i.postimg.cc/hGnBv0hj/image-removebg-preview-11.png');
+    background-size: 50px 50px;
+}
+.Btn.Incomplete::before {
+    background-image: url('https://i.postimg.cc/h46Nh05B/image-removebg-preview-8.png');
+}
+.Btn.Important:before {
+    background-image: url('https://i.postimg.cc/KYbC5vPv/image-removebg-preview-14.png');
+    background-size: 30px 25px;
+}
+.Btn.Calendar:before {
+    background-image: url('https://i.postimg.cc/GhM8kHvd/image-removebg-preview-10.png');
+}
+                                             /* Bar */
+.Bar {
+    display: grid;
+    grid-template-columns: 150px  120px  15fr 5px  1fr  1fr  2fr  1fr;
+}
+
+
+                                            /* Date Time */
+.Block{
+    padding: 15px ;
+    text-align: left;
+}
+.NoteDate{
+    padding-left: 40px;
+}
+
+.Note{
+    background-color:rgba(13, 13, 228, 0.12);
+    border-radius: 6px;
+    color: rgba(0, 122, 255, 1);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 600;
+    text-align: center;
+}
+.Date{
+    height: 30px;
+    width: 110px;
+    border: none;
+}
+.Time{
+    height: 30px;
+    width: 85px;
+    border: none;
+}
+                                            /* Search */
+.NoteSearch{
+    text-align:end;
+    padding: 10px;
+}
+.Search{
+    height: 35px;
+    width: 35vw;                     
+    max-width: 700px;  
+    border-radius: 9px;
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+    padding-left: 10px;
+}  
+.searchicon {
+    padding-top: 15px;
+    height: 15px;
+    width: auto;
+    position: relative;
+    right: 45px;
+    top: 6px;
+}
+
+                                            /* Setting */
+.NoteSetting {
+  position: relative;
+    padding-top: 12.5px;
+    text-align: left;
+    left: 30px;
+}
+.settingicon{
+    height: 35px;
+    width: auto;
+}
+                                            /* Notification */
+.NoteNotification{
+    padding-left: 25px;
+    padding-top: 9px;
+    text-align: left;
+}
+.notificationicon{
+    height: 40px;
+    width: auto;
+}
+                                            /* Username */
+.Username{
+    padding-top: 19px;
+    padding-right: 0px;
+    text-align: right;
+    color: rgba(0, 122, 255, 1);
+    font-size: 18px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Avatar */
+.NoteAvatar{
+    position: relative;
+    top: -16px;
+    text-align: left;
+ 
+}
+.avataricon{
+    height: 90px;
+    width: auto;
+}
+                                       /* Content */
+.Content{
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr 1fr 2fr 1fr 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas: 
+        "zz zzz zzz zzxx xxx xxx xx"
+        "kk kk kk kk kk kk kk";
+}
+
+.top-section {
+  padding: 20px 40px;
+  width: 70%;
+  overflow-y: auto;
+  font-size: 20;
+}
+.top-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas: "tasks clock";
+  column-gap: 40px; /* khoảng cách giữa 2 cột */
+}
+.bottom-section {
+  padding: 20px 40px;
+  width: 95%;
+  overflow-y: auto;
+  font-size: 20;
+}
+.top-section h3
+{
+  margin: 0 0 3px 0;
+}
+.bottom-section h3 {
+  margin: 0 0 3px 10 px;
+}
+/* Scrollbar đẹp */
+.top-section::-webkit-scrollbar,
+.bottom-section::-webkit-scrollbar {
+  width: 6px;
+}
+.top-section::-webkit-scrollbar-thumb,
+.bottom-section::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 3px;
+}
+/* Divider giữa 2 section */
+.divider {
+  width: 101%;
+  height: 1px;
+  background-color: black;
+  margin: 50px 0 1px 0; /* nhiều khoảng cách hơn ở trên */
+}
+
+/* Task List */
+.task-list {
+  width: 100%;
+  grid-area: tasks;
+}
+
+/* Hàng task */
+.task-item {
+  display: grid;
+  grid-template-columns: 30px 1fr 1fr 1fr auto;
+  align-items: center;
+  padding: 8px 0 1px 0;
+  border-bottom: 1px solid #aaa;
+  column-gap: 10px;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+.task-item:hover {
+  background-color: #f9f9f9; /* màu sáng nhẹ khi hover */
+}
+.task-actions .material-icons {
+  font-size: 18px;    /* icon to hơn một chút */
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.task-actions .material-icons:hover {
+  color: black;       /* đổi màu khi hover */
+}
+
+.task-icon {
+  font-size: 14px;
+  color: black;
+  text-align: center;
+}
+
+.task-title {
+  font-size: 14px;
+  color: #111;
+}
+
+.task-group {
+  font-size: 13px;
+  color: #555;
+}
+
+.task-time {
+  font-size: 13px;
+  text-align: left;
+  padding-left: 10px;
+  color: #999;
+}
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.material-icons {
+  font-size: 14px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.material-icons.starred {
+  color: black;
+}
+.recently-header {
+  display: flex;
+  align-items: center;        /* Căn giữa theo chiều dọc */
+  justify-content: space-between; /* Đẩy 2 phần về 2 bên trái phải */
+  padding: 1px 10px 10px 0;            /* Tùy chỉnh padding nếu muốn */
+}
+
+.recently-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+#component37 {
+  display: flex;
+  align-items: center;       /* Căn giữa icon theo chiều dọc */
+  gap: 10px;                 /* Khoảng cách giữa các icon */
+}
+
+#component37 img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===== Đồng hồ cơ bản ===== */
+.clock-container {
+  position: fixed;
+  top: 120px;   /* vị trí cố định từ trên */
+  right: 30px;  /* vị trí cố định từ phải */
+  z-index: 999;
+}
+
+
+.group {
+  background-color: #d9d9d9;
+  height: 134px;
+  width: 295px;
+}
+
+.group .div {
+  height: 9px;
+  left: 84px;
+  position: absolute;
+  top: 64px;
+  width: 3px;
+}
+
+.group .ellipse {
+  background-color: #f2f2f2;
+  border-radius: 1.27px / 1.3px;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 3px;
+}
+
+.group .ellipse-2 {
+  background-color: #f2f2f2;
+  border-radius: 1.27px / 1.3px;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: 7px;
+  width: 3px;
+}
+
+.group .div-2 {
+  height: 9px;
+  left: 139px;
+  position: absolute;
+  top: 64px;
+  width: 3px;
+}
+
+.group .overlap {
+  height: 47px;
+  left: 193px;
+  position: absolute;
+  top: 47px;
+  width: 54px;
+}
+
+.group .div-3 {
+  height: 9px;
+  left: 0;
+  position: absolute;
+  top: 16px;
+  width: 3px;
+}
+
+.group .rectangle {
+  background-color: #827d7d;
+  border-radius: 2.58px;
+  height: 20px;
+  left: 5px;
+  position: absolute;
+  top: 21px;
+  width: 47px;
+}
+
+.group .overlap-wrapper {
+  height: 5px;
+  left: 2px;
+  position: absolute;
+  top: 18px;
+  width: 52px;
+}
+
+.group .overlap-group {
+  height: 5px;
+}
+
+.group .ellipse-3 {
+  background-color: #e5e5e5;
+  border-radius: 2.53px / 2.6px;
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px;
+}
+
+.group .ellipse-4 {
+  background-color: #e5e5e5;
+  border-radius: 2.53px / 2.6px;
+  height: 5px;
+  left: 47px;
+  position: absolute;
+  top: 0;
+  width: 5px;
+}
+
+.group .rectangle-2 {
+  background-color: #e5e5e5;
+  height: 1px;
+  left: 4px;
+  position: absolute;
+  top: 2px;
+  width: 44px;
+}
+
+.group .rectangle-3 {
+  background-color: #827d7d;
+  border-radius: 2.58px;
+  height: 20px;
+  left: 5px;
+  position: absolute;
+  top: 0;
+  width: 47px;
+}
+
+.group .ellipse-5 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 28px;
+  position: absolute;
+  top: 18px;
+  width: 1px;
+}
+
+
+.group .mask-group {
+  height: 15px;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  width: 47px;
+}
+
+.group .ellipse-6 {
+  background-color: #24475b;
+  border-radius: 2.53px / 2.6px;
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px;
+}
+
+.group .ellipse-7 {
+  background-color: #24475b;
+  border-radius: 2.53px / 2.6px;
+  height: 5px;
+  left: 47px;
+  position: absolute;
+  top: 0;
+  width: 5px;
+}
+
+.group .rectangle-5 {
+  background-color: #24475b;
+  height: 1px;
+  left: 4px;
+  position: absolute;
+  top: 2px;
+  width: 44px;
+}
+
+.group .ellipse-8 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 47px;
+  position: absolute;
+  top: 19px;
+  width: 1px;
+}
+
+.group .ellipse-9 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 47px;
+  position: absolute;
+  top: 22px;
+  width: 1px;
+}
+
+.group .ellipse-10 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 8px;
+  position: absolute;
+  top: 18px;
+  width: 1px;
+}
+
+.group .ellipse-11 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 8px;
+  position: absolute;
+  top: 22px;
+  width: 1px;
+}
+
+.group .text-wrapper {
+  color: #f2f2f2;
+  font-family: "Share Tech-Regular", Helvetica;
+  font-size: 36.2px;
+  font-weight: 400;
+  left: 12px;
+  letter-spacing: -3.07px;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 1px;
+  width: 34px;
+}
+
+.group .overlap-2 {
+  height: 46px;
+  left: 32px;
+  position: absolute;
+  top: 46px;
+  width: 52px;
+}
+
+.group .rectangle-6 {
+  background-color: #827d7d;
+  border-radius: 2.58px;
+  height: 20px;
+  left: 3px;
+  position: absolute;
+  top: 1px;
+  width: 47px;
+}
+
+.group .rectangle-7 {
+  background-color: #827d7d;
+  border-radius: 2.58px;
+  height: 20px;
+  left: 3px;
+  position: absolute;
+  top: 22px;
+  width: 47px;
+}
+
+.group .text-wrapper-2 {
+  color: #f2f2f2;
+  font-family: "Share Tech-Regular", Helvetica;
+  font-size: 36.2px;
+  font-weight: 400;
+  left: 24px;
+  letter-spacing: -3.07px;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  width: 19px;
+}
+
+.group .overlap-group-wrapper {
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 19px;
+  width: 52px;
+}
+
+.group .ellipse-12 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 6px;
+  position: absolute;
+  top: 19px;
+  width: 1px;
+}
+
+.group .ellipse-13 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 6px;
+  position: absolute;
+  top: 23px;
+  width: 1px;
+}
+
+.group .ellipse-14 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 45px;
+  position: absolute;
+  top: 19px;
+  width: 1px;
+}
+
+.group .ellipse-15 {
+  background-color: #0c5139;
+  border-radius: 0.63px / 0.65px;
+  height: 1px;
+  left: 45px;
+  position: absolute;
+  top: 23px;
+  width: 1px;
+}
+
+.group .overlap-3 {
+  height: 46px;
+  left: 141px;
+  position: absolute;
+  top: 46px;
+  width: 52px;
+}
+
+.group .text-wrapper-3 {
+  color: #f2f2f2;
+  font-family: "Share Tech-Regular", Helvetica;
+  font-size: 36.2px;
+  font-weight: 400;
+  left: 9px;
+  letter-spacing: -3.07px;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  width: 34px;
+}
+
+.group .overlap-4 {
+  height: 46px;
+  left: 87px;
+  position: absolute;
+  top: 46px;
+  width: 52px;
+}
+
+.group .text-wrapper-4 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 8.3px;
+  font-weight: 700;
+  left: 44px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 94px;
+  white-space: nowrap;
+  width: 27px;
+}
+
+.group .text-wrapper-5 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 8.3px;
+  font-weight: 700;
+  left: 93px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 94px;
+  white-space: nowrap;
+  width: 43px;
+}
+
+.group .p {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 12.5px;
+  font-weight: 400;
+  left: 71px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 23px;
+  width: 138px;
+}
+
+.group .text-wrapper-6 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 8.3px;
+  font-weight: 700;
+  left: 150px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 94px;
+  white-space: nowrap;
+  width: 41px;
+}
+
+.group .text-wrapper-7 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 8.3px;
+  font-weight: 700;
+  left: 191px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 95px;
+  white-space: nowrap;
+  width: 61px;
+}
+
+/* Phần ẩn */
+/* Phần Setting*/
+.NoteSetting {
+  position: relative;
+  display: inline-block;
+  padding-top: 12.5px;
+  text-align: left;
+  left: 30px;
+}
+
+#settingPanel {
+  display: none;
+  position: absolute;
+  top: 45px;  /* tăng khoảng cách hoặc điều chỉnh */
+  right: 0;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position:relative;
+  top: 8px;
+  right: 12px;
+  width: 32.5px;
+  height: 32.5px;
+}
+
+.settingicon-inner {
+color: black;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+/* Phần Thông báo*/
+
+#notificationPanel {
+  display: none;
+  position: fixed; /* hoặc absolute, chọn 1 */
+  top: 45px;
+  right: 10px;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  width: 35px;
+  height: 35px;
+}
+
+.notificationicon-inner {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+/* Label Quan trọng */
+/* Label Quan trọng */
+.label-important {
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo quan trọng */
+.important-box {
+  width: 220px;
+  height: 28px;
+  position: absolute;
+  left: 15px;
+  top: 60px;
+  background: #C8C1C1;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo quan trọng */
+.important-text {
+  position: absolute;
+  left: 20px;
+  top: 65px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo quan trọng */
+.important-time {
+  position: absolute;
+  left: 180px;
+  top: 77px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Đường kẻ phân cách */
+.divider-header {
+  width: 220px;
+  height: 0;
+  position: absolute;
+  left: 15px;
+  top: 95px;
+  outline: 1px solid black;
+  outline-offset: -0.5px;
+}
+
+/* Label Các thông báo khác */
+.label-other {
+  position: absolute;
+  left: 10px;
+  top: 105px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo khác */
+.other-box {
+  width: 220px;
+  height: 30px;
+  position: absolute;
+  left: 15px;
+  top: 125px;
+  background: #FFF4F4;
+  border-radius: 4px;
+}
+
+.other-text {
+  position: absolute;
+  left: 20px;
+  top: 130px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+.other-time {
+  position: absolute;
+  left: 180px;
+  top: 145px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Icon góc trên trái */
+.icon-wrapper {
+  width: 9px;
+  height: 11px;
+  position: absolute;
+  left: 68px;
+  top: 6px;
+  overflow: hidden;
+}
+
+.icon-box {
+  width: 4px;
+  height: 6px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  outline: 2px solid black;
+  outline-offset: -1px;
+}
+
+.icon-line {
+  width: 2px;
+  height: 1px;
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  outline: 2px solid black;
+  outline-offset: -1px;
+}
+/* Ẩn menu */
+.menu-hidden .Menu {
+  display: none;
+}
+
+/* Khi menu ẩn, phần còn lại chiếm full width */
+.menu-hidden .Content,
+.menu-hidden .Bar {
+  grid-column: 1 / -1; /* chiếm hết các cột */
+}
+
+/* Ẩn icon menu trong menu */
+.menu-hidden #menuToggle {
+  display: none;
+}
+
+/* Hiện icon menu trên thanh bar */
+.menu-hidden #menuToggleBar {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 23px;
+  height: 23px;
+  z-index: 2000;
+}
+
+#menuToggleBar img.menuicon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Ẩn icon menu trên thanh bar khi menu hiện */
+#menuToggleBar.hidden {
+  display: none;
+}
+.Block.NoteDate,
+.Block.NoteTime {
+  margin-left: 20px;
+}
+#realTimeClock,
+#realDate {
+  font-size: 14px; 
+  font-weight: normal;
+
+}
+
+
+
