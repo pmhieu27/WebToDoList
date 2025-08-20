@@ -2,8 +2,8 @@ module.exports = (sequelize, DataTypes) => {
   const ActivityLog = sequelize.define(
     "ActivityLog",
     {
-      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-      user_id: { type: DataTypes.INTEGER, allowNull: false },
+      id: { type: DataTypes.CHAR, primaryKey: true },
+      user_id: { type: DataTypes.UUID, allowNull: false },
       action: { type: DataTypes.STRING, allowNull: false },
       target_type: { type: DataTypes.STRING },
       target_id: { type: DataTypes.INTEGER },

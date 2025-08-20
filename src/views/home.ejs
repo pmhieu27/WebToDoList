@@ -11,6 +11,7 @@
       <a href="/create">Create-user</a>
     </div>
     <div class="table-container">
+      <%= JSON.stringify(listUsers) %>
       <div class="title">List user</div>
       <table>
         <tr>
@@ -18,12 +19,17 @@
           <th>Email</th>
           <th>name</th>
           <th>City</th>
+          <th>action</th>
         </tr>
         <tr>
           <td>Peter</td>
           <td>Griffin</td>
           <td>$100</td>
           <td>$100</td>
+          <td>
+            <button class="delete-button">Delete</button>
+            <button class="edit-button">Edit</button>
+          </td>
         </tr>
         <tr>
           <td>Lois</td>

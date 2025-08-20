@@ -2,8 +2,8 @@ module.exports = (sequelize, DataTypes) => {
   const TaskReminder = sequelize.define(
     "TaskReminder",
     {
-      id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-      task_id: { type: DataTypes.INTEGER, allowNull: false },
+      id: { type: DataTypes.CHAR, primaryKey: true },
+      task_id: { type: DataTypes.CHAR, allowNull: false },
       reminder_time: { type: DataTypes.DATE, allowNull: false },
       sent_at: { type: DataTypes.DATE },
     },
