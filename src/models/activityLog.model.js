@@ -6,13 +6,14 @@ module.exports = (sequelize, DataTypes) => {
       user_id: { type: DataTypes.UUID, allowNull: false },
       action: { type: DataTypes.STRING, allowNull: false },
       target_type: { type: DataTypes.STRING },
-      target_id: { type: DataTypes.INTEGER },
+      target_id: { type: DataTypes.CHAR, allowNull: false },
       timestamp: { type: DataTypes.DATE, defaultValue: DataTypes.NOW },
       details: { type: DataTypes.JSON },
     },
     {
       tableName: "activity_logs",
-      timestamps: false,
+      timestamps: true,
+      createdAt: "created_at",
     }
   );
 

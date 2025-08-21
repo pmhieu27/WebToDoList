@@ -25,12 +25,13 @@ Group.belongsToMany(User, { through: GroupMembership, foreignKey: "group_id" });
 Group.hasMany(Task, { foreignKey: "group_id" });
 Task.belongsTo(Group, { foreignKey: "group_id" });
 
-//
+//User - Task (1 - n) (create, approve)
 User.hasMany(Task, { as: "CreatedTasks", foreignKey: "creator_id" });
 User.hasMany(Task, { as: "ApprovedTasks", foreignKey: "approver_id" });
 Task.belongsTo(User, { as: "Creator", foreignKey: "creator_id" });
 Task.belongsTo(User, { as: "Approver", foreignKey: "approver_id" });
 
+// Task <-> User (n - n) (comment)
 Task.hasMany(TaskComment, { foreignKey: "task_id" });
 TaskComment.belongsTo(Task, { foreignKey: "task_id" });
 User.hasMany(TaskComment, { foreignKey: "user_id" });
