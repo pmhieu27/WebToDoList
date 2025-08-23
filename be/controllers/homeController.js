@@ -17,38 +17,38 @@ const getCreatePage = (req, res) => {
 };
 
 const postCreateUser = async (req, res) => {
-  console.log(req.body);
-  //   let email = req.body.email;
-  //   let name = req.body.name;
-  //   let city = req.body.city;
-  let { email, name, city } = req.body;
-  console.log(email, name, city);
-  // connection.query(
-  //   "INSERT INTO users (email, name, city) VALUES (?, ?, ?)",
-  //   [email, name, city],
-  //   function (error, results, fields) {
-  //     if (error) {
-  //       console.error("Error inserting user:", error);
-  //       return res.status(500).send("Error creating user");
-  //     }
-  //     console.log("User created successfully:");
-  //   }
-  // );
-  // connection.query("select * from users", function (error, results, fields) {
-  //   console.log(results);
-  // });
+  // Get user info from form
+  const {
+    username,
+    email,
+    password, // In production, hash this!
+    name,
+    avatar_url,
+    notification_preferences
+  } = req.body;
+  // Set default values if needed
+  const password_hash = password; // Replace with hash in production
+  const created_at = new Date();
+  const updated_at = new Date();
 
-  let [results, fields] = await connection.query(
-    "INSERT INTO users (email, name, city) VALUES (?, ?, ?)",
-    [email, name, city]
-  );
+  try {
+    await User.create({
+      username,
+      email,
+      password_hash,
+      name,
+      avatar_url,
+      notification_preferences,
+      created_at,
+      updated_at
+    });
 
-  console.log("User created successfully:", results);
-
-  res.send("User created successfully");
-
-  // const [results, fields] = await connection.query("select * from users");
-  // console.log(results);
+    console.log("User created successfully");
+    res.send("User created successfully");
+  } catch (error) {
+    console.error("Error inserting user:", error);
+    res.status(500).send("Error creating user");
+  }
 };
 
 module.exports = {

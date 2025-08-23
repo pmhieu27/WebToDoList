@@ -1,16 +1,19 @@
 const { Sequelize, DataTypes } = require("sequelize");
-const sequelize = new Sequelize("db_name", "user", "password", {
-  host: "localhost",
-  dialect: "mysql",
-});
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: "mysql",
+  }
+);
 
 // Import models
 const User = require("./user.model")(sequelize, DataTypes);
 const Group = require("./group.model")(sequelize, DataTypes);
-const GroupMembership = require("./groupMembership.model")(
-  sequelize,
-  DataTypes
-);
+const GroupMembership = require('./groupMembership.model')(sequelize, DataTypes);
 const Task = require("./task.model")(sequelize, DataTypes);
 const TaskComment = require("./taskComment.model")(sequelize, DataTypes);
 const TaskReminder = require("./taskReminder.model")(sequelize, DataTypes);
