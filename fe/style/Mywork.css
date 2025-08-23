@@ -1,0 +1,912 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Grid layout chính */
+body {
+    display: grid;
+    grid-template-columns: 170px 6fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+        "aa  cc"
+        "aa  bb";
+        height: 100vh;
+}
+/* Sidebar */
+/* Sidebar */
+.Menu {
+    grid-area: aa;
+    border-right: 2px solid black; /* Một đường thẳng chạy suốt */
+    background-color: white;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Item con */
+.MenuItem {
+    margin-bottom: 15px;
+}
+
+
+/* Header */
+.Bar {
+    grid-area: cc;
+    border-bottom: 2px solid black; /* Giữ đường ngang */
+}
+/* Main Content */
+.Content {
+  grid-area: bb;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+                                            /* Menu */
+.IconMenu{
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 70px;
+    text-align: right;
+}
+.menuicon {
+    height: 25px;
+    width: auto;
+}
+                                            /* Option Menu */
+/* Sidebar */
+
+
+.Btn {
+    background-color: rgba(217, 217, 217, 1);
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Icon Option Menu */
+.Btn::before {
+    content: ""; /* BẮT BUỘC để ::before hiện ra */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin-right: 8px; /* Tuỳ chỉnh nếu cần khoảng cách với chữ */
+    vertical-align: middle; /* Can giữa theo dòng chữ */
+}
+/* Hover effect */
+/* Hover cho tất cả nút */
+.Btn:hover {
+    background-color: #b0b0b0; /* Xám đậm hơn */
+    transform: translateY(-2px); /* Nổi lên */
+    transition: all 0.2s ease;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    border-radius: 6px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+
+/* Active chỉ cho Incomplete */
+.Btn.Mywork.active {
+    background-color: #a6a6a6; /* Màu khác để biết đang chọn */
+   border: 2px solid black; 
+    transform: translateY(2px); /* Ấn xuống */
+    pointer-events: none; /* Không cho bấm lại */
+}
+
+.Btn.Home::before {
+    background-image: url('https://i.postimg.cc/Fzs66Bq8/image-removebg-preview-4.png');
+    background-size: 50px 50px;
+}
+.Btn.Group::before {
+    background-image: url('https://i.postimg.cc/Wbmqt51F/image-removebg-preview-6.png');
+}
+.Btn.Mywork::before {
+    background-image: url('https://i.postimg.cc/hGnBv0hj/image-removebg-preview-11.png');
+    background-size: 50px 50px;
+}
+.Btn.Incomplete::before {
+    background-image: url('https://i.postimg.cc/h46Nh05B/image-removebg-preview-8.png');
+}
+.Btn.Important:before {
+    background-image: url('https://i.postimg.cc/KYbC5vPv/image-removebg-preview-14.png');
+    background-size: 30px 25px;
+}
+.Btn.Calendar:before {
+    background-image: url('https://i.postimg.cc/GhM8kHvd/image-removebg-preview-10.png');
+}
+                                             /* Bar */
+.Bar {
+    display: grid;
+    grid-template-columns: 150px  120px  15fr 5px  1fr  1fr  2fr  1fr;
+}
+                                            /* Date Time */
+.Block{
+    padding: 15px ;
+    text-align: left;
+}
+.NoteDate{
+    padding-left: 40px;
+}
+
+.Note{
+    background-color:rgba(13, 13, 228, 0.12);
+    border-radius: 6px;
+    color: rgba(0, 122, 255, 1);
+    font-size: 17px;
+    font-family: "Inter";
+    font-weight: 600;
+    text-align: center;
+}
+.Date{
+    height: 30px;
+    width: 110px;
+    border: none;
+}
+.Time{
+    height: 30px;
+    width: 85px;
+    border: none;
+}
+                                            /* Search */
+.NoteSearch{
+    text-align:end;
+    padding: 10px;
+}
+.Search{
+    height: 35px;
+    width: 35vw;                     
+    max-width: 700px;  
+    border-radius: 9px;
+    background-color: rgba(217, 217, 217, 1);
+    border: none;
+    padding-left: 10px;
+}  
+.searchicon {
+    padding-top: 15px;
+    height: 15px;
+    width: auto;
+    position: relative;
+    right: 45px;
+    top: 6px;
+}
+
+                                            /* Setting */
+.NoteSetting {
+  position: relative;
+    padding-top: 12.5px;
+    text-align: left;
+    left: 30px;
+}
+.settingicon{
+    height: 35px;
+    width: auto;
+}
+                                            /* Notification */
+.NoteNotification{
+    padding-top: 9px;
+    text-align: left;
+    padding-left: 25px;
+}
+.notificationicon{
+    height: 40px;
+    width: auto;
+}
+                                            /* Username */
+.Username{
+    padding-top: 19px;
+    padding-right: 0px;
+    text-align: right;
+    color: rgba(0, 122, 255, 1);
+    font-size: 18px;
+    font-family: "Inter";
+    font-weight: 500;
+}
+                                            /* Avatar */
+.NoteAvatar{
+    position: relative;
+    top: -16px;
+    text-align: left;
+ 
+}
+.avataricon{
+    height: 90px;
+    width: auto;
+}
+                                       /* Content */
+.Section {
+    max-height: 400px; 
+  padding: 0 20px 0 40px;
+  width: 95%;
+  overflow-y: auto;
+  font-size: 20;
+}
+.Section.collapsed {
+  display: none;
+}
+.table-row:hover {
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.table-header,  
+.table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 30px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.table-header {
+    font-weight: bold;
+    padding-bottom: 5px;
+    font-size: 17px;
+}
+
+.table-row {
+    padding: 8px 0 1px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.task-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.due-grp{
+    color:#8e8e8e ;
+}
+
+.due-time,
+.time-delayed {
+    color: #8e8e8e;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.material-icons {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Responsive: trên màn nhỏ co lại thành danh sách */
+@media (max-width: 600px) {
+    .table-header {
+        display: none; /* Ẩn header */
+    }
+
+    .table-row {
+        grid-template-columns: 1fr; 
+        gap: 4px;
+    }
+
+    .table-row > div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .task-name {
+        font-weight: bold;
+    }
+} 
+/* Phần ẩn */
+/* Phần Setting*/
+.NoteSetting {
+  position: relative;
+  display: inline-block;
+  padding-top: 12.5px;
+  text-align: left;
+  left: 30px;
+}
+
+#settingPanel {
+  display: none;
+  position: absolute;
+  top: 45px;  /* tăng khoảng cách hoặc điều chỉnh */
+  right: 0;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position:relative;
+  top: 8px;
+  right: 12px;
+  width: 32.5px;
+  height: 32.5px;
+}
+
+.settingicon-inner {
+color: black;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+/* Phần Thông báo*/
+
+#notificationPanel {
+  display: none;
+  position: fixed; /* hoặc absolute, chọn 1 */
+  top: 45px;
+  right: 10px;
+  z-index: 1000;
+  width: 250px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  border: 1px solid black;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.white-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.line {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 36px;
+  border-top: 1px solid black;
+  border-radius: 6px;
+}
+
+.text {
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  color: black;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.icon {
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  width: 35px;
+  height: 35px;
+}
+
+.notificationicon-inner {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+/* Label Quan trọng */
+/* Label Quan trọng */
+.label-important {
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo quan trọng */
+.important-box {
+  width: 220px;
+  height: 28px;
+  position: absolute;
+  left: 15px;
+  top: 60px;
+  background: #C8C1C1;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo quan trọng */
+.important-text {
+  position: absolute;
+  left: 20px;
+  top: 65px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo quan trọng */
+.important-time {
+  position: absolute;
+  left: 180px;
+  top: 77px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Đường kẻ phân cách */
+.divider {
+  width: 220px;
+  height: 0;
+  position: absolute;
+  left: 15px;
+  top: 95px;
+  outline: 1px solid black;
+  outline-offset: -0.5px;
+}
+
+/* Label Các thông báo khác */
+.label-other {
+  position: absolute;
+  left: 10px;
+  top: 105px;
+  color: black;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Hộp thông báo khác */
+.other-box {
+  width: 220px;
+  height: 30px;
+  position: absolute;
+  left: 15px;
+  top: 125px;
+  background: #FFF4F4;
+  border-radius: 4px;
+}
+
+/* Nội dung thông báo khác */
+.other-text {
+  position: absolute;
+  left: 20px;
+  top: 130px;
+  color: black;
+  font-size: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 210px;
+  height: 11px;
+  word-wrap: break-word;
+}
+
+/* Thời gian thông báo khác */
+.other-time {
+  position: absolute;
+  left: 180px;
+  top: 145px;
+  color: black;
+  font-size: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+
+/* Ẩn menu */
+.menu-hidden .Menu {
+  display: none;
+}
+
+/* Khi menu ẩn, phần còn lại chiếm full width */
+.menu-hidden .Content,
+.menu-hidden .Bar {
+  grid-column: 1 / -1; /* chiếm hết các cột */
+}
+
+/* Ẩn icon menu trong menu */
+.menu-hidden #menuToggle {
+  display: none;
+}
+
+/* Hiện icon menu trên thanh bar */
+.menu-hidden #menuToggleBar {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 23px;
+  height: 23px;
+  z-index: 2000;
+}
+
+#menuToggleBar img.menuicon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Ẩn icon menu trên thanh bar khi menu hiện */
+#menuToggleBar.hidden {
+  display: none;
+}
+.Block.NoteDate,
+.Block.NoteTime {
+  margin-left: 20px;
+}
+#realTimeClock,
+#realDate {
+  font-size: 14px; /* bạn có thể chỉnh nhỏ hơn hoặc lớn hơn tùy ý */
+  font-weight: normal;
+  /* thêm nếu muốn kiểu chữ khác */
+  /* font-family: 'Arial', sans-serif; */
+}
+/*my work*/
+.header {
+  display: flex;
+  align-items: center;       
+  justify-content: space-between; 
+  padding: 0 20px;          
+  height: 60px;            
+}
+
+.header h1 {
+  margin: 0; 
+  font-size: 40px;
+}
+
+.new-task {
+  background-color: #007bff;   
+  color: white;               
+  border: none;                
+  padding: 8px 16px;          
+  border-radius: 6px;         
+  font-size: 16px;             
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;            
+  transition: 0.2s ease;     
+}
+
+.new-task:hover {
+  background-color: #0056b3;  
+}
+
+/* Table */
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed; 
+  word-wrap: break-word;
+}
+
+tr {
+  transition: opacity 0.3s ease;
+}
+
+th:nth-child(1), td:nth-child(1){
+   width: 70px;
+  max-width: 70px;
+  text-align: center;
+}  
+th:nth-child(2), td:nth-child(2){
+   width: 150px;
+  max-width: 150px;
+  text-align: center;
+}  
+th:nth-child(5), td:nth-child(5){
+   width: 80px;
+  max-width: 80px;
+  text-align: center;
+}  
+th:nth-child(6), td:nth-child(6) {  
+  width: 100px;
+  max-width: 100px;
+  text-align: center;
+}
+.star {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s ease;
+  user-select: none; 
+}
+
+.star:hover {
+  color: orange;
+}
+
+.star.selected {
+  color: gold;
+  font-weight: bold;
+}
+
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td div {
+  line-height: 1.3;
+}
+
+.note-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transform: translateX(-100%);
+
+  margin-top: 4px;
+  max-width: 240px;
+  width: max-content;
+
+  background-color: white;
+  border: 2px solid #3f90f7;
+  border-radius: 18px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  font-family: "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: black;
+
+  display: none;
+  z-index: 999;
+
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+
+.note-popup h3 {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 12px;
+  user-select: none; 
+}
+
+.note-popup ol, .note-popup ul {
+  padding-left: 20px;
+  margin: 0;
+  user-select: none; 
+}
+.note-popup ul {
+  list-style-type: disc;
+  user-select: none; 
+}
+
+.note-icon {
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  color: #0f1010;
+  margin-left: 8px;
+   user-select: none; 
+}
+ol li > div {
+  display: inline;
+}
+
+ol li ul {
+  margin-left: 1em;
+  margin-top: 4px;
+}
+
+ul {
+  list-style-type: disc; 
+  padding-left: 1.5em;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between; /* đẩy phần bên phải qua phải */
+  align-items: center;
+  padding: 8px 20px;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.top-bar svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.top-bar .username {
+  font-size: 14px;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.top-bar .left span,
+.top-bar .left button {
+  margin-right: 1em;
+}
+
+.left-space {
+  width: 200px; 
+}
+
+.top-right {
+  display: flex;
+  align-items: center;       
+  gap: 12px;                 
+  padding-right: 20px;
+}
+
+.top-right > div {
+  margin-right: 12px;
+  gap: 30px;
+}
+
+.top-right-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.task-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3); /* nền mờ */
+  display: none; /* ẩn mặc định */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.task-form {
+  background: white;
+  padding: 24px 30px;
+  border-radius: 12px;
+  border: 1px solid #888;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  width: 400px;
+  font-family: Arial, sans-serif;
+}
+
+.task-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  background: #ddd;
+  padding: 6px 10px;
+  font-size: 20px;
+}
+
+.task-form label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.task-form label span {
+  display: flex;
+  align-items: center; 
+  width: 120px;
+  gap: 6px; 
+}
+
+.label-text {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.create-task-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #ccc;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style/Home.css" />
+  <title>Home</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png"
+    type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="Menu" id="menuPanel">
+    <div class="IconMenu" id="menuToggle">
+      <svg class="menuicon" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="Option">
+      <div class="MenuItem Home">
+        <button class="Btn Home active" id="btnHome">Home</button>
+      </div>
+      <div class="MenuItem Group">
+        <button class="Btn Group" id="btnGroup">Group</button>
+      </div>
+      <div class="MenuItem Mywork">
+        <button class="Btn Mywork" id="btnMywork">My Work</button>
+      </div>
+      <div class="MenuItem Incomplete">
+        <button class="Btn Incomplete " id="btnIncomplete">Incomplete</button>
+      </div>
+      <div class="MenuItem Important">
+        <button class="Btn Important" id="btnImportant">Important</button>
+      </div>
+      <div class="MenuItem Calendar">
+        <button class="Btn Calendar" id="btnCalendar">Calendar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="Bar">
+    <div class="IconMenuBar hidden" id="menuToggleBar" style="cursor:pointer;">
+      <svg class="menuicon" width="800px" height="800px" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="Block NoteDate">
+      <button class="Note Date" id="realDate"> Jun 10, 2025</button>
+    </div>
+    <div class="Block NoteTime">
+      <button class="Note Time" id="realTimeClock"> 9:41 AM</button>
+    </div>
+    <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
+      <div class="NoteSearch">
+        <input class="Search" type="text" placeholder="Search..." />
+      </div>
+    </form>
+    <img class="searchicon" src="https://i.postimg.cc/1XhxYBPZ/image-removebg-preview.png" alt="Search" />
+    <div class="NoteSetting" id="noteSetting">
+      <img class="settingicon" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+      <div id="settingPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+        <div class="container">
+          <div class="white-box"></div>
+          <div class="line"></div>
+          <div class="text">Setting</div>
+          <div class="icon">
+            <img class="settingicon-inner" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png"
+              alt="Setting" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="NoteNotification" id="noteNotification">
+      <img class="notificationicon" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png"
+        alt="Notification" />
+      <div id="notificationPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+        <div class="container">
+          <div class="label-important">Quan trọng</div>
+          <div class="important-box"></div>
+          <div class="important-text">Bạn có nhiệm vụ mới trong nhóm CSLT</div>
+          <div class="important-time">1 phút trước</div>
+
+          <div class="divider-header"></div>
+
+          <div class="label-other">Các thông báo khác</div>
+          <div class="other-box"></div>
+          <div class="other-text">Bài tập về nhà CNXHKH sẽ hết hạn trong 15p tới</div>
+          <div class="other-time">2 phút trước</div>
+          <div class="white-box"></div>
+          <div class="line"></div>
+          <div class="text">Notification</div>
+          <div class="icon">
+            <img class="notificationicon-inner" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png"
+              alt="Notification" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Username">
+      <p> Username</p>
+    </div>
+    <div class="NoteAvatar">
+      <img class="avataricon" src="https://i.postimg.cc/0ybsjbVF/image-removebg-preview-3.png" alt="Avatar" />
+    </div>
+  </div>
+
+  <div class="Content">
+    <!-- Due Tasks -->
+    <div class="due-section">
+      <div class="top-section">
+        <h3>Due Tasks</h3>
+        <div class="task-list">
+          <div class="task-item">
+            <i class="material-icons task-icon">groups</i>
+            <div class="task-title">Bài tập về nhà CNXH</div>
+            <div class="task-group">Nhóm CNXHKH</div>
+            <div class="task-time">00:12:39</div>
+            <div class="task-actions">
+              <i class="material-icons">star_border</i>
+              <i class="material-icons">more_vert</i>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <i class="material-icons task-icon">groups</i>
+            <div class="task-title">Ôn tập kiểu dữ liệu</div>
+            <div class="task-group">Nhóm CSLT</div>
+            <div class="task-time">03:35:30</div>
+            <div class="task-actions">
+              <i class="material-icons starred">star</i>
+              <i class="material-icons">more_vert</i>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <i class="material-icons task-icon">list</i>
+            <div class="task-title">Bài tập xstk</div>
+            <div class="task-group">Cá nhân</div>
+            <div class="task-time">2 days</div>
+            <div class="task-actions">
+              <i class="material-icons">star_border</i>
+              <i class="material-icons">more_vert</i>
+            </div>
+          </div>
+
+          <div class="task-item">
+            <i class="material-icons task-icon">list</i>
+            <div class="task-title">Bài tập Triết</div>
+            <div class="task-group">Cá nhân</div>
+            <div class="task-time">3 days</div>
+            <div class="task-actions">
+              <i class="material-icons">star_border</i>
+              <i class="material-icons">more_vert</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clock-container">
+        <div class="group">
+          <div class="div-2">
+            <div class="ellipse"></div>
+            <div class="ellipse-2"></div>
+          </div>
+
+          <div class="overlap">
+            <div class="div-3">
+              <div class="ellipse"></div>
+              <div class="ellipse-2"></div>
+            </div>
+
+            <div class="rectangle"></div>
+
+            <div class="overlap-wrapper">
+              <div class="overlap-group">
+                <div class="ellipse-3"></div>
+                <div class="ellipse-4"></div>
+                <div class="rectangle-2"></div>
+              </div>
+            </div>
+
+            <div class="rectangle-3"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-5"></div>
+
+            <div class="overlap-wrapper">
+              <div class="overlap-group">
+                <div class="ellipse-6"></div>
+                <div class="ellipse-7"></div>
+                <div class="rectangle-5"></div>
+              </div>
+            </div>
+
+            <div class="ellipse-8"></div>
+            <div class="ellipse-9"></div>
+            <div class="ellipse-10"></div>
+            <div class="ellipse-11"></div>
+            <div class="text-wrapper">39</div>
+          </div>
+
+          <div class="overlap-2">
+            <div class="rectangle-6"></div>
+            <div class="rectangle-7"></div>
+            <div class="text-wrapper-2">0</div>
+            <div class="overlap-group-wrapper">
+              <div class="overlap-group">
+                <div class="ellipse-6"></div>
+                <div class="ellipse-7"></div>
+                <div class="rectangle-5"></div>
+              </div>
+            </div>
+            <div class="ellipse-12"></div>
+            <div class="ellipse-13"></div>
+            <div class="ellipse-14"></div>
+            <div class="ellipse-15"></div>
+          </div>
+
+          <div class="overlap-3">
+            <div class="rectangle-6"></div>
+            <div class="rectangle-7"></div>
+            <div class="text-wrapper-3">12</div>
+            <div class="overlap-group-wrapper">
+              <div class="overlap-group">
+                <div class="ellipse-6"></div>
+                <div class="ellipse-7"></div>
+                <div class="rectangle-5"></div>
+              </div>
+            </div>
+            <div class="ellipse-12"></div>
+            <div class="ellipse-13"></div>
+            <div class="ellipse-14"></div>
+            <div class="ellipse-15"></div>
+          </div>
+
+          <div class="overlap-4">
+            <div class="rectangle-6"></div>
+            <div class="rectangle-7"></div>
+            <div class="text-wrapper-3">0</div>
+            <div class="overlap-group-wrapper">
+              <div class="overlap-group">
+                <div class="ellipse-6"></div>
+                <div class="ellipse-7"></div>
+                <div class="rectangle-5"></div>
+              </div>
+            </div>
+            <div class="ellipse-12"></div>
+            <div class="ellipse-13"></div>
+            <div class="ellipse-14"></div>
+            <div class="ellipse-15"></div>
+          </div>
+
+          <div class="text-wrapper-4">DAYS</div>
+          <div class="text-wrapper-5">HOURS</div>
+          <p class="p">Bài tập về nhà CNXH</p>
+          <div class="text-wrapper-6">MINUTES</div>
+          <div class="text-wrapper-7">SECONDS</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="divider"></div>
+
+    <!-- Recently -->
+    <div class="bottom-section">
+      <div class="recently-header">
+        <h3>Recently</h3>
+        <div id="component37" class="component37" aria-label="Component 37">
+          <!-- Frame chứa filter icon -->
+          <div id="frame10" class="frame10" role="group" aria-label="Filter group">
+            <img id="mdi:filter" class="mdi:filter"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACtSURBVHgB7dZRDYMwEMbxf1AwCZUwB5sEJFTCJCBhDtYpmYRJ6BwgYbQJbxRCjyPwcL/k3gjflzY5AGPK2jR9mr/i+FJQs1Dggq5bzcMO3RPox3dW8YoFPEJPhfCOjT4bwr8ocGmiIDwiuPc5d0GBK8oeFeEdOwkrwl/sKC+nyPK9ay+wCUd5SYmWjVRA6egbDmYFrIAVkBb4cQKBgxeRT/PmBPJvW/4OtBgjMAAjtqYG0S3tSQAAAABJRU5ErkJggg=="
+              alt="Filter icon" />
+          </div>
+
+          <!-- Frame 19 -->
+          <img id="frame19" class="frame19"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAbCAYAAACAyoQSAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFbSURBVHgB7ZbvUYNAFMR3HAtICZQQO4AOsILEDqCCYAVoBZIK1AoSO9AKpAStQN96D3Mk/Ls78i2/mZ0k5I7lHY/lgGEWcGcj+vSc+8dOtHYYn4p+VM99g64wH5HoSbQXvYuWMFWfzTSCWZVH0Vb0LboVZaLVuUy5lKyusI7xdy56gKn6n2uEU8I0Td7xXwWzCryoRFTzYGilvGepfcIOCtGbGi9CTWM9YT5g2JDpZxliGsF06r3oZcL4L5jGikUbX9NY9Ip244xRq3Hi20gV/GBHx3OGw2QuphfT2Uz5dljCHaZLBg9o2uRi5DCvydwpadRpWuAokEdIdc4dxjO315S0AnmASMcwc/fwpDFtBTL6DXn/XTP3BDt7azXe6fft0dhSL86refpMib3F+LCOs3p2eIIZ6HrLVDhsMVjZSg1v4Nk4LtC02cOmDvPWCGgyPj7cqRdwZ/DR+wVu6UawCnjGrAAAAABJRU5ErkJggg=="
+            alt="Frame 19 icon" />
+        </div>
+
+      </div>
+      <div class="task-list">
+        <div class="task-item">
+          <i class="material-icons task-icon">groups</i>
+          <div class="task-title">Bài tập về nhà tiết 10</div>
+          <div class="task-group">Nhóm CNXHKH</div>
+          <div class="task-time">July 16th, 2025</div>
+          <div class="task-actions">
+            <i class="material-icons">star_border</i>
+            <i class="material-icons">more_vert</i>
+          </div>
+        </div>
+
+        <div class="task-item">
+          <i class="material-icons task-icon">list</i>
+          <div class="task-title">Bài tập xstk</div>
+          <div class="task-group">Cá nhân</div>
+          <div class="task-time">Jul 20th, 2025</div>
+          <div class="task-actions">
+            <i class="material-icons">star_border</i>
+            <i class="material-icons">more_vert</i>
+          </div>
+        </div>
+
+        <div class="task-item">
+          <i class="material-icons task-icon">groups</i>
+          <div class="task-title">Ôn tập kiểu dữ liệu</div>
+          <div class="task-group">Nhóm CSLT</div>
+          <div class="task-time">Mar 16th, 2025</div>
+          <div class="task-actions">
+            <i class="material-icons starred">star</i>
+            <i class="material-icons">more_vert</i>
+          </div>
+        </div>
+
+        <div class="task-item">
+          <i class="material-icons task-icon">list</i>
+          <div class="task-title">Bài tập tăng chiều cao</div>
+          <div class="task-group">Cá nhân</div>
+          <div class="task-time">Feb 1st, 2024</div>
+          <div class="task-actions">
+            <i class="material-icons">star_border</i>
+            <i class="material-icons">more_vert</i>
+          </div>
+        </div>
+
+        <div class="task-item">
+          <i class="material-icons task-icon">list</i>
+          <div class="task-title">Môn kinh tế chính trị</div>
+          <div class="task-group">Cá nhân</div>
+          <div class="task-time">Feb 1st, 2024</div>
+          <div class="task-actions">
+            <i class="material-icons">star_border</i>
+            <i class="material-icons">more_vert</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script/Home.js" defer></script>
+</body>
+
+</html>

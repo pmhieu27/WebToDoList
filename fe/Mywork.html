@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Work</title>
+  <link rel="stylesheet" href="./style/Mywork.css"/>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" type="image/x-icon" />
+</head>
+<body>
+          <div class="Menu" id="menuPanel">
+    <div class="IconMenu" id="menuToggle">
+      <svg class="menuicon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="Option">
+      <div class="MenuItem Home">
+        <button class="Btn Home" id="btnHome">Home</button>
+      </div>
+      <div class="MenuItem Group">
+        <button class="Btn Group" id="btnGroup">Group</button>
+      </div>
+      <div class="MenuItem Mywork">
+        <button class="Btn Mywork active" id="btnMywork">My Work</button>
+      </div>
+      <div class="MenuItem Incomplete">
+        <button class="Btn Incomplete" id="btnIncomplete">Incomplete</button>
+      </div>
+      <div class="MenuItem Important">
+        <button class="Btn Important" id="btnImportant">Important</button>
+      </div>
+      <div class="MenuItem Calendar">
+        <button class="Btn Calendar" id="btnCalendar">Calendar</button>
+      </div>
+    </div>
+  </div>
+    <div class="Bar">
+            <div class="IconMenuBar hidden" id="menuToggleBar" style="cursor:pointer;">
+        <svg class="menuicon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      </div>
+        <div class="Block NoteDate">
+            <button class="Note Date" id="realDate"> Jun 10, 2025</button>
+        </div>
+        <div class="Block NoteTime">
+            <button class="Note Time" id="realTimeClock"> 9:41 AM</button>
+        </div>
+        <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
+            <div class="NoteSearch">
+                <input class="Search" type="text" placeholder="Search..." />
+            </div>
+        </form>
+        <img class="searchicon" src="https://i.postimg.cc/1XhxYBPZ/image-removebg-preview.png" alt="Search" />
+        <div class="NoteSetting" id="noteSetting">
+            <img class="settingicon" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+            <div id="settingPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                <div class="container">
+                  <div class="white-box"></div>
+                  <div class="line"></div>
+                  <div class="text">Setting</div>
+                  <div class="icon">
+                    <img class="settingicon-inner" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="NoteNotification" id="noteNotification">
+            <img class="notificationicon" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+            <div id="notificationPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                  <div class="container">
+                      <div class="label-important">Quan trọng</div>
+                          <div class="important-box"></div>
+                          <div class="important-text">Bạn có nhiệm vụ mới trong nhóm CSLT</div>
+                          <div class="important-time">1 phút trước</div>
+                          <div class="divider"></div>
+                          <div class="label-other">Các thông báo khác</div>
+                          <div class="other-box"></div>
+                          <div class="other-text">Bài tập về nhà CNXHKH sẽ hết hạn trong 15p tới</div>
+                          <div class="other-time">2 phút trước</div>
+                    <div class="white-box"></div>
+                    <div class="line"></div>
+                    <div class="text">Notification</div>
+                    <div class="icon">
+                      <img class="notificationicon-inner" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="Username">
+            <p> Username</p>
+        </div>
+        <div class="NoteAvatar">
+            <img class="avataricon" src="https://i.postimg.cc/0ybsjbVF/image-removebg-preview-3.png" alt="Avatar" />
+        </div>
+    </div>
+ <div class="Content">
+   <header class="header">
+        <h1>My work</h1>
+        <div class="actions">
+          <button class="new-task">New task ▼</button>
+        </div>
+      </header>
+      <!-- Table -->
+      <table>
+        <thead>
+          <tr>
+            <th>Tick</th>
+            <th>Time</th>
+            <th>Name</th>
+            <th>Group</th>
+            <th>Note</th>
+            <th>Important</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" class="task-check" ></td>
+            <td>
+              <div>Jun 10, 2025</div>
+              <div>9:00 AM</div>
+            </td>
+            <td>Bài tập về nhà tiết 10</td>
+            <td>Nhóm CNXH</td>
+             <td>
+              <span class="note-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>
+             <div class="note-popup">
+              <strong>Task 2</strong><br/>
+            <ol style="padding-left: 1.2em;">
+            <li>
+            <span style="font-weight: bold;">Hàm số kinh tế:</span>
+             Biểu diễn mối quan hệ giữa các biến kinh tế.<br>
+             Ví dụ: Hàm cầu, hàm cung, hàm chi phí, hàm lợi nhuận.
+            </li>
+            <li>
+            <span style="font-weight: bold;">Đạo hàm và ứng dụng:</span>
+            Tính tốc độ thay đổi (biên) của hàm.<br>
+            Tìm điểm cực trị (cực đại, cực tiểu) → Tối ưu hóa lợi nhuận / chi phí.
+              </li>
+            </ol>
+            <td class="star">☆</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="task-check" ></td>
+            <td>
+              <div>Jun 10, 2025</div>
+              <div>10:15 PM</div>
+            </td>
+            <td>Bài tập XSTK</td>
+            <td>Cá nhân</td>
+            <td></td>
+            <td class="star">☆</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="task-check" ></td>
+            <td>
+              <div>Jun 11, 2025</div>
+              <div>9:00 PM</div>
+            </td>
+            <td>Ôn tập kiểu dữ liệu</td>
+            <td>Nhóm CSLT</td>
+            <td>
+              <span class="note-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>
+              <div class="note-popup">
+              <strong>Task 4</strong><br/>
+             <div style="padding-left: 1.2em;">
+             <p><strong>1. Mục tiêu:</strong></p>
+             <ul style="margin: 4px 0 0 1.2em;" class="list">
+                  <li>Xóa bỏ bất công, chênh lệch giàu nghèo.</li>
+                  <li>Nâng cao đời sống vật chất và tinh thần cho nhân dân.</li>
+                  <li>Thực hiện dân giàu, nước mạnh, dân chủ, công bằng, văn minh.</li>
+             </ul>
+             </div>
+           </div>
+           </td>
+          <td class="star">☆ </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="task-check"></td>
+            <td>
+              <div>Jun 12, 2025</div>
+              <div>11:00 AM</div>
+            </td>
+            <td>Bài tập Toán kt 1</td>
+            <td>Cá nhân</td>
+            <td>
+              <span class="note-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>
+             <div class="note-popup">
+              <strong>Task 3</strong><br/>
+            <ol style="padding-left: 1.2em;">
+            <li>
+            <span style="font-weight: bold;">Hàm số kinh tế:</span>
+             Biểu diễn mối quan hệ giữa các biến kinh tế.<br>
+             Ví dụ: Hàm cầu, hàm cung, hàm chi phí, hàm lợi nhuận.
+            </li>
+            <li>
+            <span style="font-weight: bold;">Đạo hàm và ứng dụng:</span>
+            Tính tốc độ thay đổi (biên) của hàm.<br>
+            Tìm điểm cực trị (cực đại, cực tiểu) → Tối ưu hóa lợi nhuận / chi phí.
+              </li>
+            </ol>            
+            <td class="star">☆</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="task-check" ></td>
+            <td>
+              <div>Jun 12, 2025</div>
+              <div>9:30 PM</div>
+            </td>
+            <td>Bài tập Kinh tế chính trị</td>
+            <td>Cá nhân</td>
+            <td></td>
+            <td class="star" >☆</td>
+          </tr>
+        </tbody>
+      </table>
+ </div>
+<!-- Task Form Modal -->
+<div class="task-modal" id="taskModal">
+  <div class="task-form">
+    <h2>New task</h2>
+    <label><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-check-icon lucide-user-round-check"><path d="M2 21a8 8 0 0 1 13.292-6"/><circle cx="10" cy="8" r="5"/><path d="m16 19 2 2 4-4"/></svg> Status</span><input type="text" /></label>
+    <label><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-list-icon lucide-layout-list"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><path d="M14 4h7"/><path d="M14 9h7"/><path d="M14 15h7"/><path d="M14 20h7"/></svg> Task division</span><input type="text" /></label>
+    <label><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days-icon lucide-calendar-days"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg> Due date</span><input type="date" id="date" name="date"><br></label>
+    <label><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg> Group</span><input type="text" /></label>
+    <button class="create-task-btn">Create task</button>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.task-check').forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+      const row = this.closest('tr');
+      if (this.checked) {
+        row.style.opacity = '0.3';
+      } else {
+        row.style.opacity = '1';
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const starOffSVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
+           class="lucide lucide-star-off">
+        <path d="M8.34 8.34 2 9.27l5 4.87L5.82 21 12 17.77 18.18 21l-.59-3.43"/>
+        <path d="M18.42 12.76 22 9.27l-6.91-1L12 2l-1.44 2.91"/>
+        <line x1="2" y1="2" x2="22" y2="22"/>
+      </svg>
+    `;
+
+    const starSVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+    `;
+
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach(td => {
+      td.innerHTML = starOffSVG;
+
+      td.addEventListener("click", () => {
+        const currentSVG = td.querySelector("svg");
+        const isOff = currentSVG.classList.contains("lucide-star-off");
+        td.innerHTML = isOff ? starSVG : starOffSVG;
+      });
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const notes = document.querySelectorAll(".note-icon");
+
+    notes.forEach(icon => {
+      icon.addEventListener("click", () => {
+        const popup = icon.nextElementSibling;
+
+        // Ẩn popup khác
+        document.querySelectorAll(".note-popup").forEach(p => {
+          if (p !== popup) p.style.display = "none";
+        });
+
+        popup.style.display = popup.style.display === "block" ? "none" : "block";
+
+        const rect = icon.getBoundingClientRect();
+        popup.style.left = `${rect.left + window.scrollX + 30}px`;
+        popup.style.top = `${rect.top + window.scrollY + 10}px`;
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".note-icon") && !e.target.closest(".note-popup")) {
+        document.querySelectorAll(".note-popup").forEach(p => p.style.display = "none");
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const newTaskBtn = document.querySelector(".new-task");
+    const taskModal = document.getElementById("taskModal");
+
+    newTaskBtn.addEventListener("click", () => {
+      taskModal.style.display = "flex";
+    });
+
+    taskModal.addEventListener("click", (e) => {
+      if (e.target === taskModal) {
+        taskModal.style.display = "none";
+      }
+    });
+  });
+</script>
+<script>
+const iconMenu = document.getElementById('menuToggle');      // icon trong menu
+    const iconMenuBar = document.getElementById('menuToggleBar'); // icon trên thanh bar
+    const menu = document.querySelector('.Menu');
+    const body = document.body;
+
+    iconMenu.addEventListener('click', () => {
+      body.classList.add('menu-hidden');
+      iconMenuBar.classList.remove('hidden');
+    });
+
+    iconMenuBar.addEventListener('click', () => {
+      body.classList.remove('menu-hidden');
+      iconMenuBar.classList.add('hidden');
+    });
+// Connect
+   document.getElementById('btnHome').onclick = function() {
+      window.location.href = 'Home.html';
+    };
+    document.getElementById('btnIncomplete').onclick = function() {
+      window.location.href = 'Incomplete.html';
+    };
+    document.getElementById('btnGroup').onclick = function() {
+      window.location.href = 'Group.html';
+    };
+    document.getElementById('btnCalendar').onclick = function() {
+      window.location.href = 'Calendar.html';
+    };
+    document.getElementById('btnMywork').onclick = function() {
+      window.location.href = 'Mywork.html';
+    };
+    document.getElementById('btnImportant').onclick = function() {
+      window.location.href = 'Important.html';
+    };
+  /* Phần notification*/
+    const noteNotification = document.getElementById('noteNotification');
+    const notificationPanel = document.getElementById('notificationPanel');
+
+      // Nhấn vào icon để mở/đóng panel
+      noteNotification.addEventListener('click', () => {
+        if (notificationPanel.style.display === 'block') {
+          notificationPanel.style.display = 'none';
+        } else {
+          notificationPanel.style.display = 'block';
+        }
+      });
+  /* Phần setting */
+        const noteSetting = document.getElementById('noteSetting');
+        const settingPanel = document.getElementById('settingPanel');
+        noteSetting.addEventListener('click', () => {
+          if (settingPanel.style.display === 'block') {
+            settingPanel.style.display = 'none';
+          } else {
+            settingPanel.style.display = 'block';
+          }
+        });
+        document.addEventListener('click', (e) => {
+  if (!noteSetting.contains(e.target) && !settingPanel.contains(e.target)) {
+    settingPanel.style.display = 'none';
+  }
+});
+/* Đồng hồ trên thanh header chạy*/
+    // Đồng hồ thời gian thực (12h, AM/PM)
+function updateClock() {
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  // Định dạng 12h AM/PM
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 0 giờ -> 12 giờ
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  const timeString = `${hours}:${minutes} ${ampm}`;
+  document.getElementById('realTimeClock').textContent = timeString;
+  // Hiển thị ngày tháng năm dạng ví dụ: "August 12, 2025"
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('realDate').textContent = now.toLocaleDateString(undefined, options);
+}
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+
+
+</body>
+</html>

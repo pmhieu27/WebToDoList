@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style/Calendar.css" />
+    <title>Calendar</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+
+<body> 
+    <div class="Menu" id="menuPanel">
+    <div class="IconMenu" id="menuToggle">
+      <svg class="menuicon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="Option">
+      <div class="MenuItem Home">
+        <button class="Btn Home" id="btnHome">Home</button>
+      </div>
+      <div class="MenuItem Group">
+        <button class="Btn Group" id="btnGroup">Group</button>
+      </div>
+      <div class="MenuItem Mywork">
+        <button class="Btn Mywork" id="btnMywork">My Work</button>
+      </div>
+      <div class="MenuItem Incomplete">
+        <button class="Btn Incomplete active" id="btnIncomplete">Incomplete</button>
+      </div>
+      <div class="MenuItem Important">
+        <button class="Btn Important" id="btnImportant">Important</button>
+      </div>
+      <div class="MenuItem Calendar">
+        <button class="Btn Calendar" id="btnCalendar">Calendar</button>
+      </div>
+    </div>
+  </div>
+    <div class="Bar">
+            <div class="IconMenuBar hidden" id="menuToggleBar" style="cursor:pointer;">
+        <svg class="menuicon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      </div>
+        <div class="Block NoteDate">
+            <button class="Note Date" id="realDate"> Jun 10, 2025</button>
+        </div>
+        <div class="Block NoteTime">
+            <button class="Note Time" id="realTimeClock"> 9:41 AM</button>
+        </div>
+        <form action="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" method="post">
+            <div class="NoteSearch">
+                <input class="Search" type="text" placeholder="Search..." />
+            </div>
+        </form>
+        <img class="searchicon" src="https://i.postimg.cc/1XhxYBPZ/image-removebg-preview.png" alt="Search" />
+        <div class="NoteSetting" id="noteSetting">
+            <img class="settingicon" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+            <div id="settingPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                <div class="container">
+                  <div class="white-box"></div>
+                  <div class="line"></div>
+                  <div class="text">Setting</div>
+                  <div class="icon">
+                    <img class="settingicon-inner" src="https://i.postimg.cc/qMKqRDg2/image-removebg-preview-1.png" alt="Setting" />
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="NoteNotification" id="noteNotification">
+            <img class="notificationicon" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+            <div id="notificationPanel" style="display:none; position: fixed; top: 40px; right: 10px; z-index: 1000;">
+                  <div class="container">
+                      <div class="label-important">Quan trọng</div>
+                          <div class="important-box"></div>
+                          <div class="important-text">Bạn có nhiệm vụ mới trong nhóm CSLT</div>
+                          <div class="important-time">1 phút trước</div>
+
+                          <div class="divider"></div>
+
+                          <div class="label-other">Các thông báo khác</div>
+                          <div class="other-box"></div>
+                          <div class="other-text">Bài tập về nhà CNXHKH sẽ hết hạn trong 15p tới</div>
+                          <div class="other-time">2 phút trước</div>
+                    <div class="white-box"></div>
+                    <div class="line"></div>
+                    <div class="text">Notification</div>
+                    <div class="icon">
+                      <img class="notificationicon-inner" src="https://i.postimg.cc/jS5sf8S8/image-removebg-preview-2.png" alt="Notification" />
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="Username">
+            <p> Username</p>
+        </div>
+        <div class="NoteAvatar">
+            <img class="avataricon" src="https://i.postimg.cc/0ybsjbVF/image-removebg-preview-3.png" alt="Avatar" />
+        </div>
+    </div>
+
+   <div class="Content">
+    <div class="calendar-container">
+        <!-- Bảng lịch -->
+          <!-- Cột lịch mỗi ngày -->
+          <div class="day-column">
+          <div class="time-column">
+          <div class="day-label"></div>          
+          <div class="time-slot">0:00</div>
+          <div class="time-slot">1:00</div>
+          <div class="time-slot">2:00</div>
+          <div class="time-slot">3:00</div>
+          <div class="time-slot">4:00</div>
+          <div class="time-slot">5:00</div>
+          <div class="time-slot">6:00</div>
+          <div class="time-slot">7:00</div>
+          <div class="time-slot">8:00</div>
+          <div class="time-slot">9:00</div>
+          <div class="time-slot">10:00</div>
+          <div class="time-slot">11:00</div>
+          <div class="time-slot">12:00</div>
+          <div class="time-slot">13:00</div>
+          <div class="time-slot">14:00</div>
+          <div class="time-slot">15:00</div>
+          <div class="time-slot">16:00</div>
+          <div class="time-slot">17:00</div>
+          <div class="time-slot">18:00</div>
+          <div class="time-slot">19:00</div>
+          <div class="time-slot">20:00</div>
+          <div class="time-slot">21:00</div>
+          <div class="time-slot">22:00</div>
+          <div class="time-slot">23:00</div>
+         </div>
+         </div>
+         <div class="calendar-grid">
+          <div class="day-column">
+         <div class="day-label">
+         <span class="weekday">Sun</span>
+         <span class="daynum">21</span>
+         </div>
+             <div class="day-body">
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+             </div>
+         </div>
+      
+          <div class="day-column">
+            <div class="day-label">
+              <span class="weekday">Mon</span>
+              <span class="daynum">22</span>
+            </div>
+            <div class="event blue" style="top: 525px; height: 60px;">8:00 AM<br>Monday Wake-Up Hour</div>
+            <div class="event blue" style="top: 645px; height: 60px;">10:00 AM<br>Financial Update</div>
+            <div class="event purple" style="top: 705px; height: 60px;">11:00 AM<br>New Employee Welcome Lunch</div>
+            <div class="event blue" style="top: 765px; height: 60px;">12:00 PM<br>Design System Kickoff Lunch</div>
+            <div class="event blue" style="top: 825px; height: 60px;">1:00 PM<br>Design Review</div>
+            <div class="event orange" style="top: 885px; height: 60px;">2:00 PM<br>1:1 with Jon</div>
+            <div class="day-body">
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+             </div>
+          </div>
+          <div class="day-column">
+            <div class="day-label">
+              <span class="weekday">Tue</span>
+              <span class="daynum">23</span>
+            </div>
+            <div class="event blue" style="top: 585px; height: 60px;">9:00 AM<br>Design Review</div>
+            <div class="event blue" style="top: 765px; height: 60px;">12:00 PM<br>Lunch</div>
+            <div class="event blue" style="top: 885px; height: 60px;">2:00 PM<br>Design Review II</div>
+            <div class="day-body">
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+             </div>
+          </div>
+          <div class="day-column">
+            <div class="day-label">
+              <span class="weekday">Web</span>
+              <span class="daynum">24</span>
+            </div>
+            <div class="event green" style="top: 585px; height: 60px;">9:00 AM<br>Webinar</div>
+            <div class="event purple" style="top: 705px; height: 60px;">11:00 AM<br>Onboarding</div>
+            <div class="event blue" style="top: 825px; height: 60px;">1:00 PM<br>Workshop</div>
+            <div class="day-body">
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+             </div>
+          </div>
+          <div class="day-column">
+            <div class="day-label">
+              <span class="weekday">Thu</span>
+              <span class="daynum">25</span>
+            </div>
+            <div class="event blue" style="top: 585px; height: 120px;">9:00 AM<br>All-Team Kickoff</div>
+            <div class="event purple" style="top: 645px; height: 60px;">10:00 AM<br>Health Benefits</div>
+            <div class="day-body">
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+             </div>
+          </div>
+          <div class="day-column">
+            <div class="day-label">
+              <span class="weekday">Fri</span>
+              <span class="daynum">26</span>
+            </div>
+            <div class="event blue" style="top: 585px; height: 60px;">9:00 AM<br>Coffee Chat</div>
+            <div class="event blue" style="top: 765px; height: 60px;">12:00 PM<br>Marketing Meet-and-Greet</div>
+            <div class="event orange" style="top: 885px; height: 60px;">2:00 PM<br>1:1 with Heather</div>
+            <div class="day-body">
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+             </div>
+          </div>
+          <div class="day-column">
+            <div class="day-label">
+              <span class="weekday">Sat</span>
+              <span class="daynum">27</span>
+            </div>
+            <div class="event red" style="top: 1005px; height: 60px;">4:00 PM<br>Happy Hour</div>
+            <div class="day-body">
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+              <div class="hour-slot"></div>
+             </div>
+         </div>
+          </div>
+        </div>
+   </div>
+</body>
+<script>
+   document.getElementById('btnHome').onclick = function() {
+      window.location.href = 'Home.html';
+    };
+    document.getElementById('btnIncomplete').onclick = function() {
+      window.location.href = 'Incomplete.html';
+    };
+    document.getElementById('btnGroup').onclick = function() {
+      window.location.href = 'Group.html';
+    };
+    document.getElementById('btnCalendar').onclick = function() {
+      window.location.href = 'Calendar.html';
+    };
+    document.getElementById('btnMywork').onclick = function() {
+      window.location.href = 'Mywork.html';
+    };
+    document.getElementById('btnImportant').onclick = function() {
+      window.location.href = 'Important.html';
+    };
+  /* Phần setting */
+        const noteSetting = document.getElementById('noteSetting');
+        const settingPanel = document.getElementById('settingPanel');
+        noteSetting.addEventListener('click', () => {
+          if (settingPanel.style.display === 'block') {
+            settingPanel.style.display = 'none';
+          } else {
+            settingPanel.style.display = 'block';
+          }
+        });
+        document.addEventListener('click', (e) => {
+  if (!noteSetting.contains(e.target) && !settingPanel.contains(e.target)) {
+    settingPanel.style.display = 'none';
+  }
+});
+      /* Phần notification*/
+      const noteNotification = document.getElementById('noteNotification');
+      const notificationPanel = document.getElementById('notificationPanel');
+      // Nhấn vào icon để mở/đóng panel
+      noteNotification.addEventListener('click', () => {
+        if (notificationPanel.style.display === 'block') {
+          notificationPanel.style.display = 'none';
+        } else {
+          notificationPanel.style.display = 'block';
+        }
+      });
+      // Nhấn ra ngoài thì panel tự đóng
+      document.addEventListener('click', (e) => {
+        if (!noteNotification.contains(e.target) && !notificationPanel.contains(e.target)) {
+          notificationPanel.style.display = 'none';
+        }
+      });
+    const iconMenu = document.getElementById('menuToggle');      // icon trong menu
+    const iconMenuBar = document.getElementById('menuToggleBar'); // icon trên thanh bar
+    const menu = document.querySelector('.Menu');
+    const body = document.body;
+    iconMenu.addEventListener('click', () => {
+      body.classList.add('menu-hidden');
+      iconMenuBar.classList.remove('hidden');
+    });
+    iconMenuBar.addEventListener('click', () => {
+      body.classList.remove('menu-hidden');
+      iconMenuBar.classList.add('hidden');
+    });
+    /* Đồng hồ trên thanh header chạy*/
+    // Đồng hồ thời gian thực (12h, AM/PM)
+function updateClock() {
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  // Định dạng 12h AM/PM
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 0 giờ -> 12 giờ
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  const timeString = `${hours}:${minutes} ${ampm}`;
+  document.getElementById('realTimeClock').textContent = timeString;
+  // Hiển thị ngày tháng năm dạng ví dụ: "August 12, 2025"
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('realDate').textContent = now.toLocaleDateString(undefined, options);
+}
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+
+</html>
