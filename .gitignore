@@ -1,5 +1,7 @@
 /node_modules
 /vs_code
-
+bun.lock
+yarn.lock
+package-lock.json
 #environment
 .env
