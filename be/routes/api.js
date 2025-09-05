@@ -6,7 +6,7 @@ const { createTask, getTasks, getTaskById, updateTask, deleteTask } = require('.
 const { register, login } = require('../controllers/authController');
 
 // User routes (protect all except registration)
-router.post('/api/user', register); 
+router.post('/api/register', register); 
 router.get('/api/user', verifyToken, getUsers);
 router.get('/api/user/:id', verifyToken, getUserById);
 router.put('/api/user/:id', verifyToken, updateUser);

@@ -20,6 +20,7 @@
     "dev": "nodemon ./be/server.js"
   },
   "dependencies": {
+    "argon2": "^0.44.0",
     "axios": "^1.11.0",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
@@ -30,7 +31,8 @@
     "jsonwebtoken": "^9.0.2",
     "mariadb": "^3.4.5",
     "mysql2": "^3.14.3",
-    "sequelize": "^6.37.7"
+    "sequelize": "^6.37.7",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "nodemon": "3.1.10"
